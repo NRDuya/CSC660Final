@@ -1,0 +1,6 @@
+framework module Pods_Restroom_Review {
+  umbrella header "Pods-Restroom Review-umbrella.h"
+
+  export *
+  module * { export * }
+}
