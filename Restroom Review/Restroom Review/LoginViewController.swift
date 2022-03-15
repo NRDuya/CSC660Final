@@ -11,6 +11,8 @@ import FirebaseEmailAuthUI
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    
     override func viewWillAppear(_ animated: Bool) {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
@@ -20,35 +22,22 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .systemFill
-        label.textAlignment = .center
-        return label
-    }()
 
-    private let logOutButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemRed
-        button.setTitle("Log out", for: .normal)
-        return button
-    }()
-    
     func showUserInfo(user:User) {
-        nameLabel.frame = CGRect(x: 20, y: view.bounds.height / 3, width: view.bounds.width - 40, height: 50)
-        logOutButton.frame = CGRect(x: 20, y: view.bounds.height / 3 + 50,  width: view.bounds.width - 40, height: 50)
-        logOutButton.addTarget(self, action: #selector(logoutButtonPressed), for:.touchUpInside)
-        view.addSubview(nameLabel)
-        view.addSubview(logOutButton)
+        usernameLabel.text = user.displayName
+        // populate user reviews
     }
     
-    @objc func logoutButtonPressed() {
-      do {
-        try Auth.auth().signOut()
-      } catch let err {
-        print(err)
-      }
+    @IBAction func viewSavedBathrooms(_ sender: UIButton) {
+        print("PUSH")
+    }
+
+    @IBAction func logoutButtonClicked(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+        } catch let err {
+          print(err)
+        }
     }
     
     func showLoginVC() {

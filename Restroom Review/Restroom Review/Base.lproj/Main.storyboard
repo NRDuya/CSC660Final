@@ -43,21 +43,68 @@
             </objects>
             <point key="canvasLocation" x="-1571" y="332"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="gJl-2f-BAg">
             <objects>
-                <viewController id="0Ov-5m-fPo" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wa8-Vw-bSN">
+                <viewController id="0Ov-5m-fPo" customClass="LoginViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wa8-Vw-bSN" customClass="LoginViewCont">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jf7-QL-9wz">
+                                <rect key="frame" x="20" y="88" width="374" height="31.5"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0C-ue-cda">
+                                <rect key="frame" x="137" y="144.5" width="140" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Saved Bathrooms"/>
+                                <connections>
+                                    <action selector="viewSavedBathrooms:" destination="0Ov-5m-fPo" eventType="touchUpInside" id="YVf-AR-0LS"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cA6-4D-HUh">
+                                <rect key="frame" x="0.0" y="190.5" width="414" height="622.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="F5H-mM-QpY"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cA6-4D-HUh" firstAttribute="top" secondItem="h0C-ue-cda" secondAttribute="bottom" constant="15" id="Dg2-2P-xuL"/>
+                            <constraint firstItem="F5H-mM-QpY" firstAttribute="bottom" secondItem="cA6-4D-HUh" secondAttribute="bottom" id="Gpd-ZG-TdP"/>
+                            <constraint firstItem="F5H-mM-QpY" firstAttribute="trailing" secondItem="Jf7-QL-9wz" secondAttribute="trailing" constant="20" id="SF9-Vv-QPh"/>
+                            <constraint firstItem="cA6-4D-HUh" firstAttribute="leading" secondItem="F5H-mM-QpY" secondAttribute="leading" id="ctr-Mo-ClD"/>
+                            <constraint firstItem="Jf7-QL-9wz" firstAttribute="top" secondItem="F5H-mM-QpY" secondAttribute="top" id="eqm-7y-ysX"/>
+                            <constraint firstItem="h0C-ue-cda" firstAttribute="top" secondItem="Jf7-QL-9wz" secondAttribute="bottom" constant="25" id="fV6-Tq-gOQ"/>
+                            <constraint firstItem="F5H-mM-QpY" firstAttribute="trailing" secondItem="cA6-4D-HUh" secondAttribute="trailing" id="lw2-W9-rJs"/>
+                            <constraint firstItem="F5H-mM-QpY" firstAttribute="trailing" secondItem="h0C-ue-cda" secondAttribute="trailing" constant="137" id="oVX-bt-Uk6"/>
+                            <constraint firstItem="h0C-ue-cda" firstAttribute="leading" secondItem="F5H-mM-QpY" secondAttribute="leading" constant="137" id="r9W-fg-GHh"/>
+                            <constraint firstItem="Jf7-QL-9wz" firstAttribute="leading" secondItem="F5H-mM-QpY" secondAttribute="leading" constant="20" id="wUf-ln-Jsj"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hBn-8x-Itg"/>
+                    <navigationItem key="navigationItem" id="hBn-8x-Itg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="lO5-5a-icI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Vp4-Ml-KN3">
+                                <rect key="frame" x="316.5" y="5" width="77.5" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" destination="0Ov-5m-fPo" eventType="touchUpInside" id="491-cc-yUe"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="usernameLabel" destination="Jf7-QL-9wz" id="GRm-QV-1ZC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVj-ec-82g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-881" y="331"/>
+            <point key="canvasLocation" x="-881.15942028985512" y="330.13392857142856"/>
         </scene>
         <!--Search-->
         <scene sceneID="frd-A4-OiV">
@@ -76,11 +123,11 @@
             </objects>
             <point key="canvasLocation" x="-1570" y="-361"/>
         </scene>
-        <!--Account-->
+        <!--More-->
         <scene sceneID="BFD-0s-Hfd">
             <objects>
                 <navigationController id="PEX-Qh-OBC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="IWE-q5-lfU"/>
+                    <tabBarItem key="tabBarItem" title="More" id="IWE-q5-lfU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WL1-yS-CBA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -93,11 +140,12 @@
             </objects>
             <point key="canvasLocation" x="-197" y="-361"/>
         </scene>
-        <!--Item-->
+        <!--Account-->
         <scene sceneID="Ou0-hC-JlQ">
             <objects>
                 <navigationController id="aPf-1g-Bwu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="EL1-2W-XfB"/>
+                    <tabBarItem key="tabBarItem" title="Account" id="EL1-2W-XfB"/>
+                    <navigationItem key="navigationItem" id="cqC-Ff-kV5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hKb-F3-FLs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -110,11 +158,11 @@
             </objects>
             <point key="canvasLocation" x="-881" y="-361"/>
         </scene>
-        <!--Login View Controller-->
+        <!--View Controller-->
         <scene sceneID="GeH-qz-ZMq">
             <objects>
-                <viewController id="6Fg-Oq-rVh" customClass="LoginViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mgu-I8-PKf" customClass="Lo">
+                <viewController id="6Fg-Oq-rVh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mgu-I8-PKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="4Ut-XP-U3t"/>
@@ -130,9 +178,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
