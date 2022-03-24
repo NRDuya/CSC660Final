@@ -7,20 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		68CDA23F324BAD640FD3C290 /* Pods_Restroom_Review.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AD773DE8AE91B02A1FCB80 /* Pods_Restroom_Review.framework */; };
 		CD04EA5727D8A01600D90366 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD04EA5627D8A01600D90366 /* GoogleService-Info.plist */; };
+		CD0A381127E514EE00937BF6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381027E514EE00937BF6 /* UserModel.swift */; };
+		CD0A381327E855BC00937BF6 /* RestroomDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381227E855BC00937BF6 /* RestroomDoc.swift */; };
+		CD0A381527E85BD700937BF6 /* RestroomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381427E85BD700937BF6 /* RestroomModel.swift */; };
+		CD0A381727E8F78100937BF6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381627E8F78000937BF6 /* SearchViewController.swift */; };
+		CD0A381A27E9483E00937BF6 /* AddRestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */; };
+		CD43FEED27EC1DCD00A38888 /* ReviewDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */; };
+		CD43FEEF27EC37E200A38888 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEEE27EC37E200A38888 /* ReviewModel.swift */; };
+		CD9F346727EAF4B100D81876 /* RestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F346627EAF4B100D81876 /* RestroomViewController.swift */; };
 		CDA7BA7827D209D60071497C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7BA7727D209D60071497C /* AppDelegate.swift */; };
 		CDA7BA7A27D209D60071497C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7BA7927D209D60071497C /* SceneDelegate.swift */; };
 		CDA7BA7C27D209D60071497C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7BA7B27D209D60071497C /* LoginViewController.swift */; };
 		CDA7BA7F27D209D60071497C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA7BA7D27D209D60071497C /* Main.storyboard */; };
 		CDA7BA8127D209D70071497C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA7BA8027D209D70071497C /* Assets.xcassets */; };
 		CDA7BA8427D209D70071497C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA7BA8227D209D70071497C /* LaunchScreen.storyboard */; };
+		F2F29EEFC3D2A0E46E7FA27A /* Pods_Restroom_Review.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E851D564F9E2E2AFF8C865E /* Pods_Restroom_Review.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		86E8CBD1D6A043E6CCEB78CA /* Pods-Restroom Review.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restroom Review.release.xcconfig"; path = "Target Support Files/Pods-Restroom Review/Pods-Restroom Review.release.xcconfig"; sourceTree = "<group>"; };
-		CB33D7124D6BB6AF6D612447 /* Pods-Restroom Review.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restroom Review.debug.xcconfig"; path = "Target Support Files/Pods-Restroom Review/Pods-Restroom Review.debug.xcconfig"; sourceTree = "<group>"; };
+		449698A576B8C20B28382F5C /* Pods-Restroom Review.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restroom Review.debug.xcconfig"; path = "Target Support Files/Pods-Restroom Review/Pods-Restroom Review.debug.xcconfig"; sourceTree = "<group>"; };
+		466CB6B8FC2F549A552EC35A /* Pods-Restroom Review.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restroom Review.release.xcconfig"; path = "Target Support Files/Pods-Restroom Review/Pods-Restroom Review.release.xcconfig"; sourceTree = "<group>"; };
+		8E851D564F9E2E2AFF8C865E /* Pods_Restroom_Review.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Restroom_Review.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD04EA5627D8A01600D90366 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CD0A381027E514EE00937BF6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CD0A381227E855BC00937BF6 /* RestroomDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomDoc.swift; sourceTree = "<group>"; };
+		CD0A381427E85BD700937BF6 /* RestroomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomModel.swift; sourceTree = "<group>"; };
+		CD0A381627E8F78000937BF6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = "/Users/nathanielduya/Desktop/CS CLASSES/Spring2022/iOS Dev csc680/CSC660Final/Restroom Review/Restroom Review/SearchViewController.swift"; sourceTree = "<absolute>"; };
+		CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestroomViewController.swift; sourceTree = "<group>"; };
+		CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDoc.swift; sourceTree = "<group>"; };
+		CD43FEEE27EC37E200A38888 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		CD9F346627EAF4B100D81876 /* RestroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomViewController.swift; sourceTree = "<group>"; };
 		CDA7BA7427D209D60071497C /* Restroom Review.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restroom Review.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA7BA7727D209D60071497C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA7BA7927D209D60071497C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +46,6 @@
 		CDA7BA8027D209D70071497C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDA7BA8327D209D70071497C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDA7BA8527D209D70071497C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1AD773DE8AE91B02A1FCB80 /* Pods_Restroom_Review.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Restroom_Review.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68CDA23F324BAD640FD3C290 /* Pods_Restroom_Review.framework in Frameworks */,
+				F2F29EEFC3D2A0E46E7FA27A /* Pods_Restroom_Review.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,18 +63,71 @@
 		3DDAF642252446517A546206 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CB33D7124D6BB6AF6D612447 /* Pods-Restroom Review.debug.xcconfig */,
-				86E8CBD1D6A043E6CCEB78CA /* Pods-Restroom Review.release.xcconfig */,
+				449698A576B8C20B28382F5C /* Pods-Restroom Review.debug.xcconfig */,
+				466CB6B8FC2F549A552EC35A /* Pods-Restroom Review.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		85476893704484E408C3686D /* Frameworks */ = {
+		BC63DF12ADD101A8A8793B8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F1AD773DE8AE91B02A1FCB80 /* Pods_Restroom_Review.framework */,
+				8E851D564F9E2E2AFF8C865E /* Pods_Restroom_Review.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD0A380B27E513A300937BF6 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				CD0A380F27E5145A00937BF6 /* Documents */,
+				CD0A380E27E513E900937BF6 /* Models */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		CD0A380E27E513E900937BF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD0A381027E514EE00937BF6 /* UserModel.swift */,
+				CD0A381427E85BD700937BF6 /* RestroomModel.swift */,
+				CD43FEEE27EC37E200A38888 /* ReviewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD0A380F27E5145A00937BF6 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				CD0A381227E855BC00937BF6 /* RestroomDoc.swift */,
+				CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		CD9F346827EAF4E100D81876 /* SearchTab */ = {
+			isa = PBXGroup;
+			children = (
+				CD0A381627E8F78000937BF6 /* SearchViewController.swift */,
+				CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */,
+				CD9F346627EAF4B100D81876 /* RestroomViewController.swift */,
+			);
+			path = SearchTab;
+			sourceTree = "<group>";
+		};
+		CD9F346927EAF4EF00D81876 /* AccountTab */ = {
+			isa = PBXGroup;
+			children = (
+				CDA7BA7B27D209D60071497C /* LoginViewController.swift */,
+			);
+			path = AccountTab;
+			sourceTree = "<group>";
+		};
+		CD9F346A27EAF4F700D81876 /* MoreTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoreTab;
 			sourceTree = "<group>";
 		};
 		CDA7BA6B27D209D60071497C = {
@@ -67,7 +136,7 @@
 				CDA7BA7627D209D60071497C /* Restroom Review */,
 				CDA7BA7527D209D60071497C /* Products */,
 				3DDAF642252446517A546206 /* Pods */,
-				85476893704484E408C3686D /* Frameworks */,
+				BC63DF12ADD101A8A8793B8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,9 +151,12 @@
 		CDA7BA7627D209D60071497C /* Restroom Review */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F346A27EAF4F700D81876 /* MoreTab */,
+				CD9F346927EAF4EF00D81876 /* AccountTab */,
+				CD9F346827EAF4E100D81876 /* SearchTab */,
+				CD0A380B27E513A300937BF6 /* db */,
 				CDA7BA7727D209D60071497C /* AppDelegate.swift */,
 				CDA7BA7927D209D60071497C /* SceneDelegate.swift */,
-				CDA7BA7B27D209D60071497C /* LoginViewController.swift */,
 				CDA7BA7D27D209D60071497C /* Main.storyboard */,
 				CDA7BA8027D209D70071497C /* Assets.xcassets */,
 				CDA7BA8227D209D70071497C /* LaunchScreen.storyboard */,
@@ -101,12 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDA7BA8827D209D70071497C /* Build configuration list for PBXNativeTarget "Restroom Review" */;
 			buildPhases = (
-				37348BC414743E3CD5DC53C0 /* [CP] Check Pods Manifest.lock */,
+				DF9AA76AF93EA3BF86C1FC5D /* [CP] Check Pods Manifest.lock */,
 				CDA7BA7027D209D60071497C /* Sources */,
 				CDA7BA7127D209D60071497C /* Frameworks */,
 				CDA7BA7227D209D60071497C /* Resources */,
-				BCBCA01954ACC1E8DBCBCF1D /* [CP] Embed Pods Frameworks */,
-				AD10641E1E0A469CA7F7C4C2 /* [CP] Copy Pods Resources */,
+				04D678B143B4FBB361AC8A53 /* [CP] Embed Pods Frameworks */,
+				753E855600EAFD843CE8F70E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,7 +237,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37348BC414743E3CD5DC53C0 /* [CP] Check Pods Manifest.lock */ = {
+		04D678B143B4FBB361AC8A53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		753E855600EAFD843CE8F70E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF9AA76AF93EA3BF86C1FC5D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -187,40 +293,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD10641E1E0A469CA7F7C4C2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BCBCA01954ACC1E8DBCBCF1D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Restroom Review/Pods-Restroom Review-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -228,8 +300,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0A381527E85BD700937BF6 /* RestroomModel.swift in Sources */,
+				CD0A381727E8F78100937BF6 /* SearchViewController.swift in Sources */,
+				CD43FEED27EC1DCD00A38888 /* ReviewDoc.swift in Sources */,
+				CD9F346727EAF4B100D81876 /* RestroomViewController.swift in Sources */,
 				CDA7BA7C27D209D60071497C /* LoginViewController.swift in Sources */,
+				CD0A381327E855BC00937BF6 /* RestroomDoc.swift in Sources */,
 				CDA7BA7827D209D60071497C /* AppDelegate.swift in Sources */,
+				CD0A381A27E9483E00937BF6 /* AddRestroomViewController.swift in Sources */,
+				CD43FEEF27EC37E200A38888 /* ReviewModel.swift in Sources */,
+				CD0A381127E514EE00937BF6 /* UserModel.swift in Sources */,
 				CDA7BA7A27D209D60071497C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +454,7 @@
 		};
 		CDA7BA8927D209D70071497C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB33D7124D6BB6AF6D612447 /* Pods-Restroom Review.debug.xcconfig */;
+			baseConfigurationReference = 449698A576B8C20B28382F5C /* Pods-Restroom Review.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -403,7 +483,7 @@
 		};
 		CDA7BA8A27D209D70071497C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86E8CBD1D6A043E6CCEB78CA /* Pods-Restroom Review.release.xcconfig */;
+			baseConfigurationReference = 466CB6B8FC2F549A552EC35A /* Pods-Restroom Review.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

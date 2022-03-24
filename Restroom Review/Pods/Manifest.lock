@@ -365,6 +365,9 @@ PODS:
     - FirebaseAnalytics (~> 8.13.0)
   - Firebase/CoreOnly (8.13.0):
     - FirebaseCore (= 8.13.0)
+  - Firebase/Firestore (8.13.0):
+    - Firebase/CoreOnly
+    - FirebaseFirestore (~> 8.13.0)
   - FirebaseAnalytics (8.13.0):
     - FirebaseAnalytics/AdIdSupport (= 8.13.0)
     - FirebaseCore (~> 8.0)
@@ -433,6 +436,8 @@ PODS:
     - "gRPC-C++ (~> 1.28.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 2.30908.0)
+  - FirebaseFirestoreSwift (8.13.0-beta):
+    - FirebaseFirestore (~> 8.0)
   - FirebaseFirestoreUI (12.1.1):
     - FirebaseFirestore (~> 8.0)
   - FirebaseGoogleAuthUI (12.1.1):
@@ -488,6 +493,7 @@ PODS:
     - FirebasePhoneAuthUI (~> 12.0)
   - FirebaseUI/Storage (12.1.1):
     - FirebaseStorageUI (~> 12.0)
+  - GeoFire/Utils (4.3.0)
   - GoogleAppMeasurement (8.13.0):
     - GoogleAppMeasurement/AdIdSupport (= 8.13.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
@@ -577,9 +583,12 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Firestore
+  - FirebaseFirestoreSwift (= 8.13.0-beta)
   - FirebaseUI
   - FirebaseUI/Auth
   - FirebaseUI/Email
+  - GeoFire/Utils
 
 SPEC REPOS:
   trunk:
@@ -602,6 +611,7 @@ SPEC REPOS:
     - FirebaseEmailAuthUI
     - FirebaseFacebookAuthUI
     - FirebaseFirestore
+    - FirebaseFirestoreSwift
     - FirebaseFirestoreUI
     - FirebaseGoogleAuthUI
     - FirebaseInstallations
@@ -610,6 +620,7 @@ SPEC REPOS:
     - FirebaseStorage
     - FirebaseStorageUI
     - FirebaseUI
+    - GeoFire
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleSignIn
@@ -643,6 +654,7 @@ SPEC CHECKSUMS:
   FirebaseEmailAuthUI: d4b6c4f450dccc7764ec83b6884ebf2c700d1a7e
   FirebaseFacebookAuthUI: 1dc97b056ca35d410eb75fa84ec901cfed0ef491
   FirebaseFirestore: 11d872a1e6f745f5ab52b96a218c60bfc6cbd770
+  FirebaseFirestoreSwift: 36aa2968411b7a7e82c83d1379f91e5cea07b68e
   FirebaseFirestoreUI: cdfa6c04124a44dfff28fe64385229541206138a
   FirebaseGoogleAuthUI: 00f4a3ff878bb96ba5a04cb7752b08235a3dbd9e
   FirebaseInstallations: 60edbf7e11d91ae4c751d26c200dfd037099abe0
@@ -651,6 +663,7 @@ SPEC CHECKSUMS:
   FirebaseStorage: 0f115042c1596f5df5a80b67cf414d8f028ccddd
   FirebaseStorageUI: e8fecbe7f0524f1d67aea714065e5a46843b2d0e
   FirebaseUI: dc90cd9081a0c2dcb94413cfdac3f1b662205c42
+  GeoFire: c34927b5c81ab614f611c79aa8d074cfa9780f07
   GoogleAppMeasurement: 135c2fbcf5038e0f37dbce04fa641a702fc275d1
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleSignIn: c90b5bec45e780f54c6a8e1e3c182a86e3dda69d
@@ -664,6 +677,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SDWebImage: 631cf572cc93dfdfe54162e556410a61f1141928
 
-PODFILE CHECKSUM: 423c66db6892c5448f1570f9be174a04751ea9b4
+PODFILE CHECKSUM: 39ce9124b58bda81cc2635fc0f055d325bcd5b75
 
 COCOAPODS: 1.11.2

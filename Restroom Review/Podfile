@@ -8,9 +8,14 @@ target 'Restroom Review' do
   # Pods for Restroom Review
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
+
 
 pod 'FirebaseUI'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Email'
+
+pod 'FirebaseFirestoreSwift', '8.13.0-beta'
+pod 'GeoFire/Utils'
 
 end

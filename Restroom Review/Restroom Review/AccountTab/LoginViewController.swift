@@ -2,29 +2,33 @@
 //  ViewController.swift
 //  Restroom Review
 //
-//  Created by Nathaniel Duya on 3/4/22.
-//
 
 import UIKit
 import FirebaseAuthUI
 import FirebaseEmailAuthUI
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FUIAuthDelegate {
+    let userModel = UserModel()
 
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let user = user {
-                self.showUserInfo(user:user)
+            if let user: User = user {
+                self.showUserInfo(user: user)
             } else {
                 self.showLoginVC()
             }
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
-    func showUserInfo(user:User) {
+    func showUserInfo(user: User) {
         usernameLabel.text = user.displayName
+        
         // populate user reviews
     }
     
@@ -47,15 +51,21 @@ class LoginViewController: UIViewController {
         }
         let providers = [FUIEmailAuth()]
         authUI.providers = providers
-        
+        authUI.delegate = self
         let authViewController = authUI.authViewController()
         authViewController.modalPresentationStyle = .overCurrentContext
         self.present(authViewController, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        guard let user = user else {
+            return
+        }
+        guard let displayName = user.displayName else {
+            return
+        }
+        // Add user to firebase database
+        userModel.logUser(uid: user.uid, displayName: displayName)
     }
 }
 
