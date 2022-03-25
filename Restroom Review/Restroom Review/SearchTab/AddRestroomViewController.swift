@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import GeoFire
+import FirebaseFirestore
 
 protocol AddRestroomDelegate: AnyObject {
     func addRestroom(restroom: Restroom)
@@ -38,10 +38,10 @@ class AddRestroomViewController: UIViewController  {
         }
         let latitude = 51.5074
         let longitude = 0.12780
-        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let hash = GFUtils.geoHash(forLocation: location)
-
-        let newRestroom: Restroom = Restroom(name: name, location: nil, phone: phone, hours: nil)
+        let location = GeoPoint(latitude: latitude, longitude: longitude)
+        
+        
+        let newRestroom: Restroom = Restroom(name: name, location: location, phone: phone, hours: nil)
         
         delegate?.addRestroom(restroom: newRestroom)
     }
