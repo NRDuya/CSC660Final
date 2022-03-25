@@ -22,7 +22,7 @@ class SearchViewController: UIViewController, AddRestroomDelegate {
         // confirm location in mapkit
         //restroomModel.createRestroom(restroom: restroom)
         dismiss(animated: true, completion: nil)
-        let newRestroomID = "New Restroom Test"
+        let newRestroomID = "zjEnWsHUuL8D4IJD7kAx"
         
         performSegue(withIdentifier: "ToRestroomSegue", sender: newRestroomID)
     }

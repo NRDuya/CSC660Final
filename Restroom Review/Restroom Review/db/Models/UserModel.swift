@@ -19,4 +19,10 @@ struct UserModel {
                 }
             }
     }
+    
+    func getUserDisplayname(userRef: String) async throws -> String {
+        let user = try await db.document(userRef).getDocument()
+        let displayName = user.data()?["displayName"] as? String ?? "No name"
+        return displayName
+    }
 }

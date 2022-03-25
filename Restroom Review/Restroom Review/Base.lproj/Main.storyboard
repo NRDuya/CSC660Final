@@ -207,7 +207,7 @@
                     <connections>
                         <outlet property="restroomName" destination="Yis-M2-omW" id="NCF-x5-3vU"/>
                         <outlet property="restroomPhone" destination="q9K-Kb-QY0" id="eCO-X2-LB8"/>
-                        <outlet property="reviewTable" destination="M65-9l-OBg" id="MLc-cd-A1w"/>
+                        <outlet property="reviewTableView" destination="M65-9l-OBg" id="HWF-UA-z1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNW-P4-KEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

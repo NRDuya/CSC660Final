@@ -7,18 +7,24 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-public struct Review: Codable {
-    let author: String
+public class Review: Codable {
+    @DocumentID var documentID: String?
+    let author: DocumentReference
     let content: String
     let rating: Int
     let created = FieldValue.serverTimestamp()
     let tag: Array<String>?
+    var displayName: String?
 
     enum CodingKeys: String, CodingKey {
+        case documentID
         case author
         case content
         case rating
         case tag
+        case displayName
     }
+    
 }
