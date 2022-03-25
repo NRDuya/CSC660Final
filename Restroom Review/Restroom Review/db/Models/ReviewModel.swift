@@ -10,20 +10,14 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct ReviewModel {
-    func getReviewsByRestaurant(restaurantID: String) {
-//        restroomRef.collection("Reviews").getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                for review in querySnapshot!.documents {
-//                    let reviewData = review.data()
-//                    guard let author = reviewData["author"] as? String else {
-//                        return
-//                    }
-//                    print("\(review.documentID) => \(review.data())")
-//                }
-//            }
-//        }
-    }
+    let db = Firestore.firestore()
 
+    func getReviewsByRestroom(restroomID: String) async throws -> [Review] {
+        let restroomReviewsRef = db.collection("Restrooms").document(restroomID).collection("Reviews")
+        let restroomReviews = try await restroomReviewsRef.getDocuments()
+        
+        return restroomReviews.documents.compactMap { review in      
+            return try? review.data(as: Review.self)
+        }   
+    }
 }
