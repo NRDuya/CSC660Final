@@ -20,8 +20,15 @@ struct RestroomModel {
                     print("Document added with ID: \(newRestroomRef.documentID)")
                 }
             }
+            newRestroomRef.setData(["created": FieldValue.serverTimestamp()], merge: true) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+            }
         } catch let error {
-            print("Error writing city to Firestore: \(error)")
+            print("Error writing restroom to Firestore: \(error)")
         }
         return newRestroomRef.documentID
     }

@@ -30,9 +30,9 @@ public struct Restroom: Codable {
 
     enum CodingKeys: String, CodingKey {
         case name
-        case phone
         case location
         case address
+        case phone
         case hours
     }
 }
