@@ -16,6 +16,7 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
     let reviewModel = ReviewModel()
     let userModel = UserModel()
     var restroomID: String?
+    var restroom: Restroom?
     var reviews: [Review] = []
     
     @IBOutlet weak var restroomName: UILabel!
@@ -35,8 +36,11 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
         
         Task {
             do {
-                let restroom = try await restroomModel.getRestroom(restroomID: restroomID)
-                 
+                restroom = try await restroomModel.getRestroomByID(restroomID: restroomID)
+                guard let restroom = restroom else {
+                    return
+                }
+
                 reviews = try await reviewModel.getReviewsByRestroom(restroomID: restroomID)
                 for review in reviews {
                     review.displayName = try await userModel.getUserDisplayname(userRef: review.author.path)
@@ -50,7 +54,7 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
                     reviewTableView.reloadData()
                 }
             } catch {
-                print("err")
+                print(error)
             }
         }
     }

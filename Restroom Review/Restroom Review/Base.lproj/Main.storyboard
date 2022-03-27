@@ -27,6 +27,45 @@
             </objects>
             <point key="canvasLocation" x="-883" y="-1099"/>
         </scene>
+        <!--Add Address View Controller-->
+        <scene sceneID="UK5-Nh-i7a">
+            <objects>
+                <viewController id="Yry-GW-nqt" customClass="AddAddressViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qag-wg-gfk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-kw-J9p">
+                                <rect key="frame" x="0.0" y="51" width="414" height="791"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Fmz-I0-hx0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="szf-5u-whh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fmz-I0-hx0" firstAttribute="leading" secondItem="qag-wg-gfk" secondAttribute="leading" id="AG5-BN-GH6"/>
+                            <constraint firstItem="Fmz-I0-hx0" firstAttribute="top" secondItem="qag-wg-gfk" secondAttribute="top" id="JhA-eH-A1P"/>
+                            <constraint firstAttribute="trailing" secondItem="Fmz-I0-hx0" secondAttribute="trailing" id="SuY-zB-HKX"/>
+                            <constraint firstItem="ZQd-kw-J9p" firstAttribute="leading" secondItem="szf-5u-whh" secondAttribute="leading" id="UCJ-B0-pQE"/>
+                            <constraint firstItem="szf-5u-whh" firstAttribute="bottom" secondItem="ZQd-kw-J9p" secondAttribute="bottom" id="Yjz-82-Mg9"/>
+                            <constraint firstItem="szf-5u-whh" firstAttribute="trailing" secondItem="ZQd-kw-J9p" secondAttribute="trailing" id="fwi-Kk-6jF"/>
+                            <constraint firstItem="ZQd-kw-J9p" firstAttribute="top" secondItem="Fmz-I0-hx0" secondAttribute="bottom" id="kN8-6p-XJZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bvv-hF-UXY"/>
+                    <connections>
+                        <outlet property="addressSearchBar" destination="Fmz-I0-hx0" id="Cem-TN-aQn"/>
+                        <outlet property="addressTableView" destination="ZQd-kw-J9p" id="5Kp-g4-Lf0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQb-aC-v0o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2746" y="1125"/>
+        </scene>
         <!--Add Restroom View Controller-->
         <scene sceneID="U56-By-vP0">
             <objects>
@@ -46,29 +85,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123 Main St" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-pO-MZj">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123 Main St San Francisco, CA  94102" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-pO-MZj">
                                 <rect key="frame" x="38" y="177" width="338" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ste 200" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6jr-HQ-f2R">
-                                <rect key="frame" x="38" y="216" width="79" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="San Francisco, CA 94103" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56H-u0-WmK">
-                                <rect key="frame" x="38" y="255" width="338" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addressClicked:" destination="BrI-pj-8vm" eventType="editingDidBegin" id="0vs-pp-Mhz"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone (Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nw-1x-UR4">
-                                <rect key="frame" x="38" y="304" width="129" height="21"/>
+                                <rect key="frame" x="38" y="226" width="129" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(555) 555-5555 " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVO-Ht-Ags">
-                                <rect key="frame" x="38" y="330" width="137.5" height="34"/>
+                                <rect key="frame" x="38" y="252" width="137.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -115,36 +147,30 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="anw-Gc-tEy" firstAttribute="top" secondItem="BoM-CE-XYR" secondAttribute="bottom" constant="15" id="5vv-O2-ZSd"/>
-                            <constraint firstItem="6jr-HQ-f2R" firstAttribute="top" secondItem="GNm-pO-MZj" secondAttribute="bottom" constant="5" id="7FJ-7A-Eux"/>
-                            <constraint firstItem="56H-u0-WmK" firstAttribute="leading" secondItem="OGt-LY-AIu" secondAttribute="leading" constant="38" id="9Hd-b8-1ZS"/>
-                            <constraint firstItem="2nw-1x-UR4" firstAttribute="top" secondItem="56H-u0-WmK" secondAttribute="bottom" constant="15" id="AdA-QN-m7u"/>
                             <constraint firstItem="anw-Gc-tEy" firstAttribute="leading" secondItem="OGt-LY-AIu" secondAttribute="leading" constant="38" id="E1H-rV-5L3"/>
                             <constraint firstItem="UVO-Ht-Ags" firstAttribute="leading" secondItem="OGt-LY-AIu" secondAttribute="leading" constant="38" id="IaI-ov-SA3"/>
                             <constraint firstItem="OGt-LY-AIu" firstAttribute="trailing" secondItem="BoM-CE-XYR" secondAttribute="trailing" constant="38" id="Ib0-Ye-DCs"/>
                             <constraint firstItem="s96-JB-kyy" firstAttribute="top" secondItem="Hbm-nh-rpH" secondAttribute="bottom" constant="20" id="RHu-js-Nfq"/>
-                            <constraint firstItem="OGt-LY-AIu" firstAttribute="trailing" secondItem="56H-u0-WmK" secondAttribute="trailing" constant="38" id="SVM-nG-8zM"/>
                             <constraint firstItem="2nw-1x-UR4" firstAttribute="leading" secondItem="OGt-LY-AIu" secondAttribute="leading" constant="38" id="UXC-XO-2m8"/>
                             <constraint firstItem="GNm-pO-MZj" firstAttribute="top" secondItem="anw-Gc-tEy" secondAttribute="bottom" constant="5" id="WT6-Ug-KNz"/>
                             <constraint firstItem="Hbm-nh-rpH" firstAttribute="leading" secondItem="NoR-4r-sgm" secondAttribute="leading" id="Y9V-pt-kxA"/>
                             <constraint firstAttribute="trailing" secondItem="Hbm-nh-rpH" secondAttribute="trailing" id="YjR-4R-C0m"/>
                             <constraint firstItem="BoM-CE-XYR" firstAttribute="top" secondItem="s96-JB-kyy" secondAttribute="bottom" constant="5" id="bHc-o1-rBB"/>
-                            <constraint firstItem="56H-u0-WmK" firstAttribute="top" secondItem="6jr-HQ-f2R" secondAttribute="bottom" constant="5" id="bhL-AX-lFZ"/>
                             <constraint firstItem="s96-JB-kyy" firstAttribute="leading" secondItem="OGt-LY-AIu" secondAttribute="leading" constant="38" id="bmp-K6-fDG"/>
                             <constraint firstItem="BoM-CE-XYR" firstAttribute="leading" secondItem="OGt-LY-AIu" secondAttribute="leading" constant="38" id="cHS-be-cC3"/>
                             <constraint firstItem="GNm-pO-MZj" firstAttribute="leading" secondItem="OGt-LY-AIu" secondAttribute="leading" constant="38" id="h5E-JG-37D"/>
                             <constraint firstItem="UVO-Ht-Ags" firstAttribute="top" secondItem="2nw-1x-UR4" secondAttribute="bottom" constant="5" id="mtS-wx-u4d"/>
+                            <constraint firstItem="2nw-1x-UR4" firstAttribute="top" secondItem="GNm-pO-MZj" secondAttribute="bottom" constant="15" id="wJq-3n-Hsm"/>
                             <constraint firstItem="Hbm-nh-rpH" firstAttribute="top" secondItem="NoR-4r-sgm" secondAttribute="top" id="xcs-Vd-6OD"/>
                             <constraint firstItem="OGt-LY-AIu" firstAttribute="trailing" secondItem="GNm-pO-MZj" secondAttribute="trailing" constant="38" id="xsa-Eo-q0l"/>
-                            <constraint firstItem="6jr-HQ-f2R" firstAttribute="leading" secondItem="OGt-LY-AIu" secondAttribute="leading" constant="38" id="yGl-SB-meN"/>
                             <constraint firstItem="UVO-Ht-Ags" firstAttribute="top" secondItem="2nw-1x-UR4" secondAttribute="bottom" constant="5" id="yQd-Ab-hog"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="restroomCity" destination="56H-u0-WmK" id="90d-Y6-xjA"/>
+                        <outlet property="addressText" destination="GNm-pO-MZj" id="RRa-zY-GBe"/>
                         <outlet property="restroomName" destination="BoM-CE-XYR" id="cyn-dr-cKU"/>
                         <outlet property="restroomPhone" destination="UVO-Ht-Ags" id="xR8-bb-G65"/>
-                        <outlet property="restroomStreet" destination="GNm-pO-MZj" id="vKl-dT-Yhy"/>
-                        <outlet property="restroomSuite" destination="6jr-HQ-f2R" id="Geo-uc-taF"/>
+                        <segue destination="Yry-GW-nqt" kind="show" identifier="ChangeAddressSegue" id="Tc6-1I-M3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCj-xc-mC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
