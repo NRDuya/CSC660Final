@@ -4,8 +4,8 @@
 //
 
 import Foundation
-import CoreLocation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct hours: Codable {
     var day: String
@@ -20,16 +20,19 @@ struct hours: Codable {
 }
 
 public struct Restroom: Codable {
+    @DocumentID var documentID: String?
     let name: String
-    let location: GeoPoint?
+    let location: GeoPoint
+    let address: String
     let created = FieldValue.serverTimestamp()
     let phone: String?
     let hours: Array<hours>?
 
     enum CodingKeys: String, CodingKey {
         case name
-        case phone
         case location
+        case address
+        case phone
         case hours
     }
 }

@@ -15,6 +15,7 @@
 		CD0A381A27E9483E00937BF6 /* AddRestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */; };
 		CD43FEED27EC1DCD00A38888 /* ReviewDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */; };
 		CD43FEEF27EC37E200A38888 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEEE27EC37E200A38888 /* ReviewModel.swift */; };
+		CD43FEF327F0247400A38888 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEF227F0247400A38888 /* AddAddressViewController.swift */; };
 		CD9F346727EAF4B100D81876 /* RestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F346627EAF4B100D81876 /* RestroomViewController.swift */; };
 		CDA7BA7827D209D60071497C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7BA7727D209D60071497C /* AppDelegate.swift */; };
 		CDA7BA7A27D209D60071497C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7BA7927D209D60071497C /* SceneDelegate.swift */; };
@@ -37,6 +38,7 @@
 		CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestroomViewController.swift; sourceTree = "<group>"; };
 		CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDoc.swift; sourceTree = "<group>"; };
 		CD43FEEE27EC37E200A38888 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		CD43FEF227F0247400A38888 /* AddAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
 		CD9F346627EAF4B100D81876 /* RestroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomViewController.swift; sourceTree = "<group>"; };
 		CDA7BA7427D209D60071497C /* Restroom Review.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restroom Review.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA7BA7727D209D60071497C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,8 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				CD0A381627E8F78000937BF6 /* SearchViewController.swift */,
-				CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */,
 				CD9F346627EAF4B100D81876 /* RestroomViewController.swift */,
+				CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */,
+				CD43FEF227F0247400A38888 /* AddAddressViewController.swift */,
 			);
 			path = SearchTab;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				CD43FEEF27EC37E200A38888 /* ReviewModel.swift in Sources */,
 				CD0A381127E514EE00937BF6 /* UserModel.swift in Sources */,
 				CDA7BA7A27D209D60071497C /* SceneDelegate.swift in Sources */,
+				CD43FEF327F0247400A38888 /* AddAddressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

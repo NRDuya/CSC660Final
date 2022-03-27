@@ -10,7 +10,7 @@ import FirebaseFirestoreSwift
 struct RestroomModel {
     let db = Firestore.firestore()
 
-    func createRestroom(restroom: Restroom) {
+    func createRestroom(restroom: Restroom) -> String{
         let newRestroomRef = db.collection("Restrooms").document()
         do {
             try newRestroomRef.setData(from: restroom) { err in
@@ -20,12 +20,20 @@ struct RestroomModel {
                     print("Document added with ID: \(newRestroomRef.documentID)")
                 }
             }
+            newRestroomRef.setData(["created": FieldValue.serverTimestamp()], merge: true) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+            }
         } catch let error {
-            print("Error writing city to Firestore: \(error)")
+            print("Error writing restroom to Firestore: \(error)")
         }
+        return newRestroomRef.documentID
     }
     
-    func getRestroom(restroomID: String) async throws -> Restroom {
+    func getRestroomByID(restroomID: String) async throws -> Restroom {
         let restroomRef = db.collection("Restrooms").document(restroomID)
         return try await restroomRef.getDocument(as: Restroom.self)
     }

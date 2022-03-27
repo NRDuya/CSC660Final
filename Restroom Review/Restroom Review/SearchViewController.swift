@@ -19,11 +19,8 @@ class SearchViewController: UIViewController, AddRestroomDelegate {
     }
     
     func addRestroom(restroom: Restroom) {
-        // confirm location in mapkit
-        //restroomModel.createRestroom(restroom: restroom)
+        let newRestroomID = restroomModel.createRestroom(restroom: restroom)
         dismiss(animated: true, completion: nil)
-        let newRestroomID = "zjEnWsHUuL8D4IJD7kAx"
-        
         performSegue(withIdentifier: "ToRestroomSegue", sender: newRestroomID)
     }
     
