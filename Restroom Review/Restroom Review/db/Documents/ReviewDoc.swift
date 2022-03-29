@@ -13,11 +13,18 @@ public class Review: Codable {
     @DocumentID var documentID: String?
     let author: DocumentReference
     let content: String
-    let rating: Int
-    let created = FieldValue.serverTimestamp()
+    let rating: Double
     let tag: Array<String>?
     var displayName: String?
 
+    init(author: DocumentReference, content: String, rating: Double, displayName: String) {
+        self.author = author
+        self.content = content
+        self.rating = rating
+        self.displayName = displayName
+        self.tag = nil
+    }
+    
     enum CodingKeys: String, CodingKey {
         case documentID
         case author
@@ -26,5 +33,4 @@ public class Review: Codable {
         case tag
         case displayName
     }
-    
 }

@@ -10,7 +10,7 @@ import FirebaseFirestoreSwift
 struct RestroomModel {
     let db = Firestore.firestore()
 
-    func createRestroom(restroom: Restroom) -> String{
+    func createRestroom(restroom: Restroom) -> String {
         let newRestroomRef = db.collection("Restrooms").document()
         do {
             try newRestroomRef.setData(from: restroom) { err in

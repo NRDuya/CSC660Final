@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-883" y="-1099"/>
         </scene>
-        <!--Add Address View Controller-->
+        <!--Change Address View Controller-->
         <scene sceneID="UK5-Nh-i7a">
             <objects>
-                <viewController id="Yry-GW-nqt" customClass="AddAddressViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yry-GW-nqt" customClass="ChangeAddressViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qag-wg-gfk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="51" width="414" height="791"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Fmz-I0-hx0">
+                            <searchBar contentMode="redraw" placeholder="123 Main St San Francisco, CA  94102" translatesAutoresizingMaskIntoConstraints="NO" id="Fmz-I0-hx0">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -203,7 +204,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add a review"/>
                                 <connections>
-                                    <action selector="addReviewClicked:" destination="19n-7D-tQS" eventType="touchUpInside" id="HZX-I9-Aet"/>
+                                    <segue destination="E7R-ma-khd" kind="presentation" id="bqS-Ua-Kmf"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M65-9l-OBg">
@@ -240,6 +241,123 @@
             </objects>
             <point key="canvasLocation" x="-1145" y="1125"/>
         </scene>
+        <!--Add Review View Controller-->
+        <scene sceneID="Fgw-qz-jKe">
+            <objects>
+                <viewController id="E7R-ma-khd" customClass="AddReviewViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9I1-XT-ifa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Restroom Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7T-h8-aXJ">
+                                <rect key="frame" x="20" y="20" width="234" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lC5-M3-oNK">
+                                <rect key="frame" x="0.0" y="127" width="414" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" lookupSuggestion="YES"/>
+                            </textView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aqi-hc-q6R" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="10" y="69" width="254" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" name="AccentColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" name="AccentColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                        <color key="value" name="AccentColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="filledBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R41-yE-llm">
+                                <rect key="frame" x="361" y="23" width="33" height="35"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                                <connections>
+                                    <segue destination="zU9-s4-zjr" kind="unwind" unwindAction="unwindSearch:" id="KeV-gC-PBc"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="juH-XI-5pp">
+                                <rect key="frame" x="0.0" y="764" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" id="B8W-tY-e8Z">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1Ut-yq-wdf">
+                                            <rect key="frame" x="20" y="5.5" width="374" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Post"/>
+                                            <connections>
+                                                <action selector="postClicked:" destination="E7R-ma-khd" eventType="touchUpInside" id="kJe-Oq-Mgo"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ent-3P-wZt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aqi-hc-q6R" firstAttribute="leading" secondItem="Ent-3P-wZt" secondAttribute="leading" constant="20" id="1tk-lj-61x"/>
+                            <constraint firstItem="H7T-h8-aXJ" firstAttribute="top" secondItem="9I1-XT-ifa" secondAttribute="topMargin" constant="20" id="7mv-96-obb"/>
+                            <constraint firstItem="lC5-M3-oNK" firstAttribute="trailing" secondItem="Ent-3P-wZt" secondAttribute="trailing" id="9IW-Qj-f1z"/>
+                            <constraint firstItem="Ent-3P-wZt" firstAttribute="trailing" secondItem="R41-yE-llm" secondAttribute="trailing" constant="20" id="G30-9O-Rr3"/>
+                            <constraint firstItem="Ent-3P-wZt" firstAttribute="trailing" secondItem="H7T-h8-aXJ" secondAttribute="trailing" id="Nmq-5a-eyw"/>
+                            <constraint firstItem="aqi-hc-q6R" firstAttribute="top" secondItem="H7T-h8-aXJ" secondAttribute="bottom" constant="10" id="SUp-Ue-7Gs"/>
+                            <constraint firstItem="lC5-M3-oNK" firstAttribute="top" secondItem="aqi-hc-q6R" secondAttribute="bottom" constant="10" id="VhA-ZB-sMm"/>
+                            <constraint firstItem="lC5-M3-oNK" firstAttribute="leading" secondItem="Ent-3P-wZt" secondAttribute="leading" id="c1L-mf-luY"/>
+                            <constraint firstItem="Ent-3P-wZt" firstAttribute="bottom" secondItem="lC5-M3-oNK" secondAttribute="bottom" id="hQZ-Xc-7Qx"/>
+                            <constraint firstItem="H7T-h8-aXJ" firstAttribute="leading" secondItem="Ent-3P-wZt" secondAttribute="leading" constant="20" id="lST-wt-Hol"/>
+                            <constraint firstItem="Ent-3P-wZt" firstAttribute="trailing" secondItem="aqi-hc-q6R" secondAttribute="trailing" constant="140" id="vG1-06-QjK"/>
+                            <constraint firstItem="R41-yE-llm" firstAttribute="top" secondItem="9I1-XT-ifa" secondAttribute="topMargin" constant="23" id="zc5-IM-ddc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="content" destination="lC5-M3-oNK" id="aVM-E6-Ci9"/>
+                        <outlet property="rating" destination="aqi-hc-q6R" id="vd6-Wo-sak"/>
+                        <outlet property="restroomName" destination="H7T-h8-aXJ" id="vYS-jP-j6t"/>
+                        <outlet property="toolbar" destination="juH-XI-5pp" id="V6I-na-QpC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UeJ-6k-GbR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="zU9-s4-zjr" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-352.17391304347831" y="1125"/>
+        </scene>
         <!--Search View Controller-->
         <scene sceneID="Fn8-DT-8bW">
             <objects>
@@ -268,6 +386,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="butto:" destination="BYj-wx-Imo" eventType="touchUpInside" id="PbA-e6-UXl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eVR-YY-yKJ"/>
@@ -285,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MoY-6d-XjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1571" y="331"/>
+            <point key="canvasLocation" x="-1571.0144927536232" y="330.80357142857139"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="gJl-2f-BAg">
@@ -419,7 +540,19 @@
             <point key="canvasLocation" x="-197" y="331"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="aqi-hc-q6R">
+            <size key="intrinsicContentSize" width="258" height="50"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

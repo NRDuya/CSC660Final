@@ -12,7 +12,7 @@ protocol AddAddressDelegate: AnyObject {
     func addAddress(address: MKMapItem)
 }
 
-class AddAddressViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, MKLocalSearchCompleterDelegate {
+class ChangeAddressViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, MKLocalSearchCompleterDelegate {
     weak var delegate: AddAddressDelegate? = nil
     var address: String?
     var addressCompleter = MKLocalSearchCompleter()

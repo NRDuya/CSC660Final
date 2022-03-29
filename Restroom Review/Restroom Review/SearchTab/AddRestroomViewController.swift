@@ -56,10 +56,9 @@ class AddRestroomViewController: UIViewController, AddAddressDelegate  {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let addAddressVC = segue.destination as? AddAddressViewController {
+        if let addAddressVC = segue.destination as? ChangeAddressViewController {
             addAddressVC.delegate = self
             addAddressVC.address = address?.placemark.title
         }
-        
     }
 }

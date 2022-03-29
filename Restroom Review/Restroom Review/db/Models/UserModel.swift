@@ -25,4 +25,10 @@ struct UserModel {
         let displayName = user.data()?["displayName"] as? String ?? "No name"
         return displayName
     }
+    
+    func getUserRefPath(userID: String) -> DocumentReference {
+        let documentRefString = db.collection("Users").document(userID)
+        let userRef: DocumentReference = db.document(documentRefString.path)
+        return userRef
+    }
 }
