@@ -11,7 +11,7 @@ class ReviewCell: UITableViewCell {
     
 }
 
-class RestroomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RestroomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddReviewDelegate {
     let restroomModel = RestroomModel()
     let reviewModel = ReviewModel()
     let userModel = UserModel()
@@ -23,8 +23,8 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var restroomPhone: UILabel!
     @IBOutlet weak var reviewTableView: UITableView!
     
-    @IBAction func addReviewClicked(_ sender: UIButton) {
-    }
+    @IBAction func unwindSearch(_ segue: UIStoryboardSegue) {}
+
     override func viewDidLoad() {
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
@@ -69,9 +69,30 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         let review = reviews[indexPath.row]
-        cell.textLabel?.text = review.content
+        cell.textLabel?.text = "\(review.displayName) \(review.content)"
         return cell
     }
     
+    func addReview(review: Review) {
+        guard let restroom = restroom else {
+            return
+        }
+        guard let restroomID = restroom.documentID else {
+            return
+        }
+
+        let newReviewID = reviewModel.createReview(restroomID: restroomID, review: review)
+        review.documentID = newReviewID
+        reviews.insert(review, at: 0)
+        reviewTableView.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let addReviewVC = segue.destination as? AddReviewViewController {
+            addReviewVC.delegate = self
+            addReviewVC.restroom = restroom
+        }
+    }
     
 }

@@ -29,6 +29,7 @@ public struct Restroom: Codable {
     let hours: Array<hours>?
 
     enum CodingKeys: String, CodingKey {
+        case documentID
         case name
         case location
         case address
