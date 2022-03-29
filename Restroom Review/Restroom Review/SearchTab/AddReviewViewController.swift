@@ -13,7 +13,7 @@ protocol AddReviewDelegate: AnyObject {
     func addReview(review: Review)
 }
 
-class AddReviewViewController: UIViewController {
+class AddReviewViewController: UIViewController, UITextViewDelegate {
     let userModel = UserModel()
     weak var delegate: AddReviewDelegate? = nil
     var restroom: Restroom?
@@ -30,6 +30,11 @@ class AddReviewViewController: UIViewController {
         rating.settings.fillMode = .half
         rating.didFinishTouchingCosmos = handleChangeRating
         content.inputAccessoryView = toolbar
+        content.delegate = self
+        content.becomeFirstResponder()
+        content.text = placeholder
+        content.textColor = UIColor.lightGray
+        content.selectedTextRange = content.textRange(from: content.beginningOfDocument, to: content.beginningOfDocument)
     }
     
     func handleChangeRating (rating: Double) {
@@ -52,4 +57,30 @@ class AddReviewViewController: UIViewController {
 
         delegate?.addReview(review: newReview)
     }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText:String = textView.text
+        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
+
+        if updatedText.isEmpty {
+            textView.text = placeholder
+            textView.textColor = UIColor.lightGray
+            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+        } else if textView.textColor == UIColor.lightGray && !text.isEmpty {
+            textView.textColor = UIColor.black
+            textView.text = text
+        } else {
+            return true
+        }
+        return false
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if self.view.window != nil {
+            if textView.textColor == UIColor.lightGray {
+                textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+            }
+        }
+    }
+    var placeholder: String = "I was walking one day and had the sudden urge to go to the restroom. This bathroom located at this place was very accomodating. Employees were very understanding and clearly take pride in working at a place with a clear 5 star restroom. The entrance to the restroom was nothing amazing. However, the facilities from the toilets to the napkins were nothing short of the best of the best. 10/10 would poop again."
 }
