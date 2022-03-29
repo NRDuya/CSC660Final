@@ -2,8 +2,6 @@
 //  AddReviewViewController.swift
 //  Restroom Review
 //
-//  Created by Nathaniel Duya on 3/28/22.
-//
 
 import UIKit
 import Cosmos

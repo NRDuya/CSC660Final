@@ -2,8 +2,6 @@
 //  AddAddressViewController.swift
 //  Restroom Review
 //
-//  Created by Nathaniel Duya on 3/26/22.
-//
 
 import UIKit
 import MapKit

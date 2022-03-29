@@ -2,8 +2,6 @@
 //  SearchViewController.swift
 //  
 //
-//  Created by Nathaniel Duya on 3/21/22.
-//
 
 import UIKit
 

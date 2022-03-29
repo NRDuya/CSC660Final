@@ -2,8 +2,6 @@
 //  ReviewModel.swift
 //  Restroom Review
 //
-//  Created by Nathaniel Duya on 3/23/22.
-//
 
 import Foundation
 import FirebaseFirestore
