@@ -2,8 +2,6 @@
 //  RestroomViewController.swift
 //  Restroom Review
 //
-//  Created by Nathaniel Duya on 3/22/22.
-//
 
 import UIKit
 
