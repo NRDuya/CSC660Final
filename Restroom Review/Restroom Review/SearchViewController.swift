@@ -15,10 +15,7 @@ class SearchViewController: UIViewController, AddRestroomDelegate {
         super.viewDidLoad()
         navigationItem.searchController = searchController
     }
-    @IBAction func butto(_ sender: Any) {
-        performSegue(withIdentifier: "ToRestroomSegue", sender: "zjEnWsHUuL8D4IJD7kAx")
-    }
-    
+
     func addRestroom(restroom: Restroom) {
         let newRestroomID = restroomModel.createRestroom(restroom: restroom)
         dismiss(animated: true, completion: nil)
