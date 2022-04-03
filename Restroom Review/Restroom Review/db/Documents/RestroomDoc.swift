@@ -23,6 +23,7 @@ public struct Restroom: Codable {
     @DocumentID var documentID: String?
     let name: String
     let location: GeoPoint
+    let geohash: String
     let address: String
     let created = FieldValue.serverTimestamp()
     let phone: String?
@@ -32,6 +33,7 @@ public struct Restroom: Codable {
         case documentID
         case name
         case location
+        case geohash
         case address
         case phone
         case hours

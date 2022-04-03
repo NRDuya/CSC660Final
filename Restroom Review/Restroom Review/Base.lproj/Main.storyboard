@@ -316,7 +316,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" id="B8W-tY-e8Z">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1Ut-yq-wdf">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1Ut-yq-wdf">
                                             <rect key="frame" x="20" y="5" width="374" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
@@ -358,6 +358,54 @@
             </objects>
             <point key="canvasLocation" x="-352.17391304347831" y="1125"/>
         </scene>
+        <!--Map Table Restroom View Controller-->
+        <scene sceneID="rXk-jC-WlT">
+            <objects>
+                <viewController id="X2I-gZ-lJz" customClass="MapTableRestroomViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IFZ-l1-FYp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wG-PE-bgu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xv3-5R-ryJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUR-GG-6vJ">
+                                <rect key="frame" x="0.0" y="782" width="414" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="View Restroom List"/>
+                                <connections>
+                                    <action selector="showRestroomTable:" destination="X2I-gZ-lJz" eventType="touchUpInside" id="0kA-QF-XU5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LaK-TO-Fst"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oUR-GG-6vJ" firstAttribute="leading" secondItem="LaK-TO-Fst" secondAttribute="leading" id="2x6-y9-j2k"/>
+                            <constraint firstItem="6wG-PE-bgu" firstAttribute="bottom" secondItem="LaK-TO-Fst" secondAttribute="bottom" id="GnT-5T-f2D"/>
+                            <constraint firstItem="LaK-TO-Fst" firstAttribute="trailing" secondItem="oUR-GG-6vJ" secondAttribute="trailing" id="Rae-wk-iKy"/>
+                            <constraint firstItem="oUR-GG-6vJ" firstAttribute="bottom" secondItem="LaK-TO-Fst" secondAttribute="bottom" id="eTI-Ke-KlY"/>
+                            <constraint firstItem="Xv3-5R-ryJ" firstAttribute="leading" secondItem="LaK-TO-Fst" secondAttribute="leading" id="gd2-od-Bv7"/>
+                            <constraint firstItem="Xv3-5R-ryJ" firstAttribute="trailing" secondItem="LaK-TO-Fst" secondAttribute="trailing" id="jqP-nF-2iw"/>
+                            <constraint firstItem="Xv3-5R-ryJ" firstAttribute="top" secondItem="LaK-TO-Fst" secondAttribute="top" id="r4z-S4-xIF"/>
+                            <constraint firstItem="6wG-PE-bgu" firstAttribute="leading" secondItem="LaK-TO-Fst" secondAttribute="leading" id="rUi-k5-6vl"/>
+                            <constraint firstItem="6wG-PE-bgu" firstAttribute="top" secondItem="LaK-TO-Fst" secondAttribute="top" id="x46-YW-3re"/>
+                            <constraint firstItem="LaK-TO-Fst" firstAttribute="trailing" secondItem="6wG-PE-bgu" secondAttribute="trailing" id="xRL-Xr-WvQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BE1-H4-zo4"/>
+                    <connections>
+                        <outlet property="restroomMapView" destination="6wG-PE-bgu" id="EqH-Hv-zFq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1l-2A-ecl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2381" y="330"/>
+        </scene>
         <!--Search View Controller-->
         <scene sceneID="Fn8-DT-8bW">
             <objects>
@@ -386,6 +434,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="X2I-gZ-lJz" kind="show" id="f4n-vg-AgX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eVR-YY-yKJ"/>

@@ -6,6 +6,7 @@
 import UIKit
 import FirebaseFirestore
 import MapKit
+import GeoFire
 
 protocol AddRestroomDelegate: AnyObject {
     func addRestroom(restroom: Restroom)
@@ -49,8 +50,10 @@ class AddRestroomViewController: UIViewController, AddAddressDelegate  {
         
         let coordinates = address.placemark.coordinate
         let location = GeoPoint(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        let geoLocation = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        let geohash = GFUtils.geoHash(forLocation: geoLocation)
         
-        let newRestroom: Restroom = Restroom(name: name, location: location, address: addressName, phone: phone, hours: nil)
+        let newRestroom: Restroom = Restroom(name: name, location: location, geohash: geohash, address: addressName, phone: phone, hours: nil)
         
         delegate?.addRestroom(restroom: newRestroom)
     }
