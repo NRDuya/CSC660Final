@@ -27,32 +27,57 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
         reviewTableView.register(ReviewCell.self, forCellReuseIdentifier: "ReviewCell")
+        
         super.viewDidLoad()
-        guard let restroomID = restroomID else {
-            return
+        
+        if let restroom = restroom {
+            restroomName.text = restroom.name
+            if let phone = restroom.phone {
+                restroomPhone.text = phone
+            }
+            Task {
+                do {
+                    guard let restroomDocID = restroom.documentID else {
+                        return
+                    }
+
+                    reviews = try await reviewModel.getReviewsByRestroom(restroomID: restroomDocID)
+                    for review in reviews {
+                        review.displayName = try await userModel.getUserDisplayname(userRef: review.author.path)
+                    }
+                    
+                    await MainActor.run {
+                        reviewTableView.reloadData()
+                    }
+                } catch {
+                    print(error)
+                }
+            }
         }
         
-        Task {
-            do {
-                restroom = try await restroomModel.getRestroomByID(restroomID: restroomID)
-                guard let restroom = restroom else {
-                    return
-                }
-
-                reviews = try await reviewModel.getReviewsByRestroom(restroomID: restroomID)
-                for review in reviews {
-                    review.displayName = try await userModel.getUserDisplayname(userRef: review.author.path)
-                }
-                
-                await MainActor.run {
-                    restroomName.text = restroom.name
-                    if let phone = restroom.phone {
-                        restroomPhone.text = phone
+        if let restroomID = restroomID {
+            Task {
+                do {
+                    restroom = try await restroomModel.getRestroomByID(restroomID: restroomID)
+                    guard let restroom = restroom else {
+                        return
                     }
-                    reviewTableView.reloadData()
+
+                    reviews = try await reviewModel.getReviewsByRestroom(restroomID: restroomID)
+                    for review in reviews {
+                        review.displayName = try await userModel.getUserDisplayname(userRef: review.author.path)
+                    }
+                    
+                    await MainActor.run {
+                        restroomName.text = restroom.name
+                        if let phone = restroom.phone {
+                            restroomPhone.text = phone
+                        }
+                        reviewTableView.reloadData()
+                    }
+                } catch {
+                    print(error)
                 }
-            } catch {
-                print(error)
             }
         }
     }

@@ -53,7 +53,7 @@ class AddRestroomViewController: UIViewController, AddAddressDelegate  {
         let geoLocation = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
         let geohash = GFUtils.geoHash(forLocation: geoLocation)
         
-        let newRestroom: Restroom = Restroom(name: name, location: location, geohash: geohash, address: addressName, phone: phone, hours: nil)
+        let newRestroom: Restroom = Restroom(name: name, location: location, geohash: geohash, address: addressName, phone: phone)
         
         delegate?.addRestroom(restroom: newRestroom)
     }

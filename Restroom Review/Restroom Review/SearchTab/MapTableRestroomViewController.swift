@@ -51,6 +51,7 @@ class MapTableRestroomViewController: UIViewController {
                 as? TableRestroomViewController else {
             return
         }
+        restroomTableVC.delegate = self
         restroomTableVC.restrooms = restrooms
         if let showRestroom = showRestroom {
             restroomTableVC.showRestroom = showRestroom
@@ -59,7 +60,6 @@ class MapTableRestroomViewController: UIViewController {
         
         if let sheet = nav.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
             sheet.prefersGrabberVisible = true
             sheet.preferredCornerRadius = 24
         }
@@ -86,6 +86,22 @@ class MapTableRestroomViewController: UIViewController {
                 }
             } catch {
                 print(error)
+            }
+        }
+    }
+}
+
+
+extension MapTableRestroomViewController: TableRestroomDelegate {
+    func selectRestroom(restroom: Restroom) {
+        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "ToRestroomSegue", sender: restroom)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let restroomVC = segue.destination as? RestroomViewController {
+            if let restroom = sender as? Restroom {
+                restroomVC.restroom = restroom
             }
         }
     }

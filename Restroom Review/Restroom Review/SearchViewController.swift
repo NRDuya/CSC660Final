@@ -18,8 +18,9 @@ class SearchViewController: UIViewController, AddRestroomDelegate {
 
     func addRestroom(restroom: Restroom) {
         let newRestroomID = restroomModel.createRestroom(restroom: restroom)
+        restroom.documentID = newRestroomID
         dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "ToRestroomSegue", sender: newRestroomID)
+        performSegue(withIdentifier: "ToRestroomSegue", sender: restroom)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,8 +28,13 @@ class SearchViewController: UIViewController, AddRestroomDelegate {
             addRestroomVC.delegate = self
         }
         
-        if let restroomVC = segue.destination as? RestroomViewController, let restroomID = sender as? String {
-            restroomVC.restroomID = restroomID
+        if let restroomVC = segue.destination as? RestroomViewController {
+            if let restroom = sender as? Restroom {
+                restroomVC.restroom = restroom
+            }
+            if let restroomID = sender as? String {
+                restroomVC.restroomID = restroomID
+            }
         }
     }
 }

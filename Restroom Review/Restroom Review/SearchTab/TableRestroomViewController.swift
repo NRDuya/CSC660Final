@@ -7,14 +7,19 @@
 
 import UIKit
 
+protocol TableRestroomDelegate: AnyObject {
+    func selectRestroom(restroom: Restroom)
+}
+
 class RestroomCell: UITableViewCell {
 }
 
 class TableRestroomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var restroomTableView: UITableView!
-    var restrooms: [Restroom] = []
+    weak var delegate: TableRestroomDelegate? = nil
     var showRestroom: IndexPath = IndexPath(row: 0, section: 0)
-    
+    var restrooms: [Restroom] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         restroomTableView.delegate = self
@@ -37,4 +42,8 @@ class TableRestroomViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let restroom = restrooms[indexPath.row]
+        delegate?.selectRestroom(restroom: restroom)
+    }
 }

@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQb-aC-v0o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2746" y="1125"/>
+            <point key="canvasLocation" x="-412" y="1107"/>
         </scene>
         <!--Add Restroom View Controller-->
         <scene sceneID="U56-By-vP0">
@@ -177,7 +177,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCj-xc-mC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="4Rw-TG-rYC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2029" y="1125"/>
+            <point key="canvasLocation" x="-1217" y="1107"/>
         </scene>
         <!--Restroom View Controller-->
         <scene sceneID="nw2-6g-Fnr">
@@ -239,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNW-P4-KEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1145" y="1125"/>
+            <point key="canvasLocation" x="-1971" y="1107"/>
         </scene>
         <!--Add Review View Controller-->
         <scene sceneID="Fgw-qz-jKe">
@@ -356,7 +356,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeJ-6k-GbR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="zU9-s4-zjr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-352.17391304347831" y="1125"/>
+            <point key="canvasLocation" x="-2725" y="1107"/>
         </scene>
         <!--Table Restroom View Controller-->
         <scene sceneID="lLz-8d-Ys2">
@@ -450,6 +450,7 @@
                     <connections>
                         <outlet property="restroomMapView" destination="6wG-PE-bgu" id="EqH-Hv-zFq"/>
                         <outlet property="searchAreaButton" destination="ElY-XG-Z8G" id="M75-QM-nm3"/>
+                        <segue destination="19n-7D-tQS" kind="show" identifier="ToRestroomSegue" id="Z6U-Ie-It6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1l-2A-ecl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -643,6 +644,9 @@
             <size key="intrinsicContentSize" width="258" height="50"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="Z6U-Ie-It6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
