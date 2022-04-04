@@ -14,6 +14,7 @@
 		CD0A381727E8F78100937BF6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381627E8F78000937BF6 /* SearchViewController.swift */; };
 		CD0A381A27E9483E00937BF6 /* AddRestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */; };
 		CD1F2D1C27F68346002FD9CD /* MapTableRestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F2D1B27F68345002FD9CD /* MapTableRestroomViewController.swift */; };
+		CD227EA127FA307700C2E8DD /* TableRestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD227EA027FA307700C2E8DD /* TableRestroomViewController.swift */; };
 		CD43FEED27EC1DCD00A38888 /* ReviewDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */; };
 		CD43FEEF27EC37E200A38888 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEEE27EC37E200A38888 /* ReviewModel.swift */; };
 		CD43FEF327F0247400A38888 /* ChangeAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEF227F0247400A38888 /* ChangeAddressViewController.swift */; };
@@ -39,6 +40,7 @@
 		CD0A381627E8F78000937BF6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = "/Users/nathanielduya/Desktop/CS CLASSES/Spring2022/iOS Dev csc680/CSC660Final/Restroom Review/Restroom Review/SearchViewController.swift"; sourceTree = "<absolute>"; };
 		CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestroomViewController.swift; sourceTree = "<group>"; };
 		CD1F2D1B27F68345002FD9CD /* MapTableRestroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableRestroomViewController.swift; sourceTree = "<group>"; };
+		CD227EA027FA307700C2E8DD /* TableRestroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRestroomViewController.swift; sourceTree = "<group>"; };
 		CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDoc.swift; sourceTree = "<group>"; };
 		CD43FEEE27EC37E200A38888 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		CD43FEF227F0247400A38888 /* ChangeAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressViewController.swift; sourceTree = "<group>"; };
@@ -116,10 +118,11 @@
 			children = (
 				CD0A381627E8F78000937BF6 /* SearchViewController.swift */,
 				CD9F346627EAF4B100D81876 /* RestroomViewController.swift */,
-				CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */,
 				CD4FD36327F24CBD008EA81C /* AddReviewViewController.swift */,
+				CD0A381927E9483E00937BF6 /* AddRestroomViewController.swift */,
 				CD43FEF227F0247400A38888 /* ChangeAddressViewController.swift */,
 				CD1F2D1B27F68345002FD9CD /* MapTableRestroomViewController.swift */,
+				CD227EA027FA307700C2E8DD /* TableRestroomViewController.swift */,
 			);
 			path = SearchTab;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				CD0A381527E85BD700937BF6 /* RestroomModel.swift in Sources */,
 				CD0A381727E8F78100937BF6 /* SearchViewController.swift in Sources */,
 				CD43FEED27EC1DCD00A38888 /* ReviewDoc.swift in Sources */,
+				CD227EA127FA307700C2E8DD /* TableRestroomViewController.swift in Sources */,
 				CD1F2D1C27F68346002FD9CD /* MapTableRestroomViewController.swift in Sources */,
 				CD9F346727EAF4B100D81876 /* RestroomViewController.swift in Sources */,
 				CDA7BA7C27D209D60071497C /* LoginViewController.swift in Sources */,

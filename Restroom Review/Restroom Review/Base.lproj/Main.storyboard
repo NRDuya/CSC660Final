@@ -358,6 +358,36 @@
             </objects>
             <point key="canvasLocation" x="-352.17391304347831" y="1125"/>
         </scene>
+        <!--Table Restroom View Controller-->
+        <scene sceneID="lLz-8d-Ys2">
+            <objects>
+                <viewController storyboardIdentifier="TableRestroomViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ahB-ps-Dme" customClass="TableRestroomViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NdH-hA-KrL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZPw-s1-lfJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m27-lA-KRm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m27-lA-KRm" firstAttribute="trailing" secondItem="ZPw-s1-lfJ" secondAttribute="trailing" id="17y-FA-eL7"/>
+                            <constraint firstItem="ZPw-s1-lfJ" firstAttribute="top" secondItem="m27-lA-KRm" secondAttribute="top" id="UYr-j8-MDS"/>
+                            <constraint firstItem="ZPw-s1-lfJ" firstAttribute="leading" secondItem="m27-lA-KRm" secondAttribute="leading" id="nDy-n6-Kxg"/>
+                            <constraint firstItem="m27-lA-KRm" firstAttribute="bottom" secondItem="ZPw-s1-lfJ" secondAttribute="bottom" id="zZ6-FR-t3a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="restroomTableView" destination="ZPw-s1-lfJ" id="zGM-zZ-htW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zw5-DS-qqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3191" y="329"/>
+        </scene>
         <!--Map Table Restroom View Controller-->
         <scene sceneID="rXk-jC-WlT">
             <objects>
@@ -366,7 +396,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wG-PE-bgu">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wG-PE-bgu">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xv3-5R-ryJ">
@@ -374,11 +404,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUR-GG-6vJ">
-                                <rect key="frame" x="0.0" y="782" width="414" height="31"/>
+                                <rect key="frame" x="0.0" y="783" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NNM-Or-DoW"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="View Restroom List"/>
                                 <connections>
-                                    <action selector="showRestroomTable:" destination="X2I-gZ-lJz" eventType="touchUpInside" id="0kA-QF-XU5"/>
+                                    <action selector="showRestroomTablePressed:" destination="X2I-gZ-lJz" eventType="touchUpInside" id="5y7-8f-ile"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-XG-Z8G">
+                                <rect key="frame" x="130" y="151" width="154" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fza-yN-P1s"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Search This Area"/>
+                                <connections>
+                                    <action selector="searchAreaPressed:" destination="X2I-gZ-lJz" eventType="touchUpInside" id="xvq-Cl-XMv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -388,9 +434,12 @@
                             <constraint firstItem="oUR-GG-6vJ" firstAttribute="leading" secondItem="LaK-TO-Fst" secondAttribute="leading" id="2x6-y9-j2k"/>
                             <constraint firstItem="6wG-PE-bgu" firstAttribute="bottom" secondItem="LaK-TO-Fst" secondAttribute="bottom" id="GnT-5T-f2D"/>
                             <constraint firstItem="LaK-TO-Fst" firstAttribute="trailing" secondItem="oUR-GG-6vJ" secondAttribute="trailing" id="Rae-wk-iKy"/>
+                            <constraint firstItem="LaK-TO-Fst" firstAttribute="trailing" secondItem="ElY-XG-Z8G" secondAttribute="trailing" constant="130" id="SW7-HL-5cT"/>
+                            <constraint firstItem="ElY-XG-Z8G" firstAttribute="leading" secondItem="LaK-TO-Fst" secondAttribute="leading" constant="130" id="UES-yD-b5D"/>
                             <constraint firstItem="oUR-GG-6vJ" firstAttribute="bottom" secondItem="LaK-TO-Fst" secondAttribute="bottom" id="eTI-Ke-KlY"/>
                             <constraint firstItem="Xv3-5R-ryJ" firstAttribute="leading" secondItem="LaK-TO-Fst" secondAttribute="leading" id="gd2-od-Bv7"/>
                             <constraint firstItem="Xv3-5R-ryJ" firstAttribute="trailing" secondItem="LaK-TO-Fst" secondAttribute="trailing" id="jqP-nF-2iw"/>
+                            <constraint firstItem="ElY-XG-Z8G" firstAttribute="top" secondItem="Xv3-5R-ryJ" secondAttribute="bottom" constant="12" id="pl4-gO-vGI"/>
                             <constraint firstItem="Xv3-5R-ryJ" firstAttribute="top" secondItem="LaK-TO-Fst" secondAttribute="top" id="r4z-S4-xIF"/>
                             <constraint firstItem="6wG-PE-bgu" firstAttribute="leading" secondItem="LaK-TO-Fst" secondAttribute="leading" id="rUi-k5-6vl"/>
                             <constraint firstItem="6wG-PE-bgu" firstAttribute="top" secondItem="LaK-TO-Fst" secondAttribute="top" id="x46-YW-3re"/>
@@ -400,11 +449,12 @@
                     <navigationItem key="navigationItem" id="BE1-H4-zo4"/>
                     <connections>
                         <outlet property="restroomMapView" destination="6wG-PE-bgu" id="EqH-Hv-zFq"/>
+                        <outlet property="searchAreaButton" destination="ElY-XG-Z8G" id="M75-QM-nm3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1l-2A-ecl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2381" y="330"/>
+            <point key="canvasLocation" x="-2381.1594202898555" y="329.46428571428572"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Fn8-DT-8bW">
