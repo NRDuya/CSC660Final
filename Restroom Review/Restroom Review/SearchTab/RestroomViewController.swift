@@ -29,7 +29,7 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
         reviewTableView.register(ReviewCell.self, forCellReuseIdentifier: "ReviewCell")
         
         super.viewDidLoad()
-        
+        // If restroom was passed down
         if let restroom = restroom {
             restroomName.text = restroom.name
             if let phone = restroom.phone {
