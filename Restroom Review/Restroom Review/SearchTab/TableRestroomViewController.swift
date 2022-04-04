@@ -17,7 +17,7 @@ class RestroomCell: UITableViewCell {
 class TableRestroomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var restroomTableView: UITableView!
     weak var delegate: TableRestroomDelegate? = nil
-    var showRestroom: IndexPath = IndexPath(row: 0, section: 0)
+    var showRestroom: IndexPath?
     var restrooms: [Restroom] = []
 
     override func viewDidLoad() {
@@ -25,7 +25,9 @@ class TableRestroomViewController: UIViewController, UITableViewDelegate, UITabl
         restroomTableView.delegate = self
         restroomTableView.dataSource = self
         restroomTableView.register(RestroomCell.self, forCellReuseIdentifier: "RestroomCell")
-        restroomTableView.scrollToRow(at: showRestroom, at: .top, animated: true)
+        if let showRestroom = showRestroom {
+            restroomTableView.selectRow(at: showRestroom, animated: true, scrollPosition: .top)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
