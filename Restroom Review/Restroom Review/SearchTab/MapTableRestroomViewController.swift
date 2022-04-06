@@ -12,18 +12,30 @@ import FirebaseFirestore
 
 class MapTableRestroomViewController: UIViewController {
     let restroomModel = RestroomModel()
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchAreaButton: UIButton!
+    @IBOutlet weak var userLocationButton: UIButton!
     @IBOutlet weak var restroomMapView: MKMapView!
+    var restroomAddress: MKMapItem?
     let locationManager = CLLocationManager()
     var restrooms: [Restroom] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         restroomMapView.delegate = self
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
+
+        if let restroomAddress = restroomAddress {
+            let coordinates = restroomAddress.placemark.coordinate
+            let regionRadius: CLLocationDistance = 1000
+            let coordinateRegion = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+            restroomMapView.setRegion(coordinateRegion, animated: false)
+            restroomMapView.setCenter(coordinates, animated: false)
+            loadRestroomsFromMapLocation()
+        } else if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
         searchAreaButton.isHidden = true
@@ -40,10 +52,14 @@ class MapTableRestroomViewController: UIViewController {
     }
     
     @IBAction func searchAreaPressed(_ sender: UIButton) {
-        let center = restroomMapView.centerCoordinate
-        let region = restroomMapView.region
-        restroomMapView.removeAnnotations(restroomMapView.annotations)
-        loadRestroomsFromLocation(center: center, region: region)
+        loadRestroomsFromMapLocation()
+    }
+    
+    @IBAction func userLocationPressed(_ sender: UIButton) {
+        if let coordinate = locationManager.location?.coordinate {
+            restroomMapView.setCenter(coordinate, animated: false)
+            userLocationButton.isHidden = true
+        }
     }
     
     func showRestroomTable(showRestroom: IndexPath?) {
@@ -66,7 +82,11 @@ class MapTableRestroomViewController: UIViewController {
         present(nav, animated: true, completion: nil)
     }
     
-    func loadRestroomsFromLocation(center: CLLocationCoordinate2D, region: MKCoordinateRegion) {
+    func loadRestroomsFromMapLocation() {
+        restroomMapView.removeAnnotations(restroomMapView.annotations)
+        let center = restroomMapView.centerCoordinate
+        let region = restroomMapView.region
+        
         let furthest = CLLocation(latitude: center.latitude + (region.span.latitudeDelta / 3),
                                   longitude: center.longitude + (region.span.longitudeDelta / 3))
         let centerLoc = CLLocation(latitude: center.latitude, longitude: center.longitude)
@@ -89,21 +109,41 @@ class MapTableRestroomViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let chooseAddressVC = segue.destination as? SelectAddressViewController {
+            chooseAddressVC.delegate = self
+        }
+        
+        if let restroomVC = segue.destination as? RestroomViewController {
+            if let restroom = sender as? Restroom {
+                restroomVC.restroom = restroom
+            } else if let restroomID = sender as? String {
+                restroomVC.restroomID = restroomID
+            }
+        }
+    }
+}
+
+
+extension MapTableRestroomViewController: UISearchBarDelegate, SelectAddressDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        performSegue(withIdentifier: "ChooseAddressSegue", sender: self)
+    }
+    
+    func selectAddress(address: MKMapItem) {
+        let coordinates = address.placemark.coordinate
+        restroomMapView.setCenter(coordinates, animated: false)
+        loadRestroomsFromMapLocation()
+    }
 }
 
 
 extension MapTableRestroomViewController: TableRestroomDelegate {
     func selectRestroom(restroom: Restroom) {
+        // Dismiss the restroom table bottom sheet controller
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "ToRestroomSegue", sender: restroom)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let restroomVC = segue.destination as? RestroomViewController {
-            if let restroom = sender as? Restroom {
-                restroomVC.restroom = restroom
-            }
-        }
     }
 }
 
@@ -111,6 +151,7 @@ extension MapTableRestroomViewController: TableRestroomDelegate {
 extension MapTableRestroomViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         searchAreaButton.isHidden = false
+        userLocationButton.isHidden = restroomMapView.isUserLocationVisible
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -133,15 +174,15 @@ extension MapTableRestroomViewController: CLLocationManagerDelegate {
             locationManager.requestLocation()
         }
     }
-    
+        
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation: CLLocation = locations[0] as CLLocation
 
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        restroomMapView.setRegion(region, animated: false)
         
-        restroomMapView.setRegion(region, animated: true)
-        loadRestroomsFromLocation(center: center, region: region)
+        loadRestroomsFromMapLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
