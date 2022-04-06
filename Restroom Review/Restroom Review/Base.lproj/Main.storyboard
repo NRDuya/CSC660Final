@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQb-aC-v0o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1820" y="1107"/>
+            <point key="canvasLocation" x="-1790" y="1107"/>
         </scene>
         <!--Add Restroom View Controller-->
         <scene sceneID="U56-By-vP0">
@@ -177,7 +177,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCj-xc-mC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="4Rw-TG-rYC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2562" y="1107"/>
+            <point key="canvasLocation" x="-2523" y="385"/>
         </scene>
         <!--Restroom View Controller-->
         <scene sceneID="nw2-6g-Fnr">
@@ -396,7 +396,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wG-PE-bgu">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wG-PE-bgu">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xv3-5R-ryJ">
@@ -446,11 +446,24 @@
                             <constraint firstItem="LaK-TO-Fst" firstAttribute="trailing" secondItem="6wG-PE-bgu" secondAttribute="trailing" id="xRL-Xr-WvQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BE1-H4-zo4"/>
+                    <navigationItem key="navigationItem" id="BE1-H4-zo4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="F0q-RK-Is1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="qYO-dd-DoO">
+                                <rect key="frame" x="344" y="5" width="50" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location" catalog="system"/>
+                                <connections>
+                                    <action selector="userLocationPressed:" destination="X2I-gZ-lJz" eventType="touchUpInside" id="Sat-xw-vOG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="restroomMapView" destination="6wG-PE-bgu" id="EqH-Hv-zFq"/>
                         <outlet property="searchAreaButton" destination="ElY-XG-Z8G" id="M75-QM-nm3"/>
                         <outlet property="searchBar" destination="Xv3-5R-ryJ" id="mUv-rq-CmX"/>
+                        <outlet property="userLocationButton" destination="qYO-dd-DoO" id="WES-Nv-DyH"/>
                         <segue destination="19n-7D-tQS" kind="show" identifier="ToRestroomSegue" id="Z6U-Ie-It6"/>
                         <segue destination="Yry-GW-nqt" kind="presentation" identifier="ChooseAddressSegue" id="aTg-R2-57Z"/>
                     </connections>
@@ -482,7 +495,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="X2I-gZ-lJz" kind="show" id="f4n-vg-AgX"/>
+                                    <segue destination="X2I-gZ-lJz" kind="show" identifier="ToRestroomMapSegue" id="f4n-vg-AgX"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="h4h-4s-trx">
@@ -509,7 +522,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="71b-mt-gPY"/>
                     <connections>
+                        <outlet property="searchBar" destination="h4h-4s-trx" id="oLR-GX-pzk"/>
                         <segue destination="19n-7D-tQS" kind="show" identifier="ToRestroomSegue" id="4MF-0z-1eW"/>
+                        <segue destination="Yry-GW-nqt" kind="presentation" identifier="ChooseAddressSearchSegue" id="nSJ-WA-wl9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MoY-6d-XjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -658,6 +673,7 @@
         <segue reference="aTg-R2-57Z"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="location" catalog="system" width="128" height="118"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

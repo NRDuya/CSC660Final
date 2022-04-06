@@ -14,7 +14,9 @@ class MapTableRestroomViewController: UIViewController {
     let restroomModel = RestroomModel()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchAreaButton: UIButton!
+    @IBOutlet weak var userLocationButton: UIButton!
     @IBOutlet weak var restroomMapView: MKMapView!
+    var restroomAddress: MKMapItem?
     let locationManager = CLLocationManager()
     var restrooms: [Restroom] = []
     
@@ -23,9 +25,17 @@ class MapTableRestroomViewController: UIViewController {
         searchBar.delegate = self
         restroomMapView.delegate = self
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
+
+        if let restroomAddress = restroomAddress {
+            let coordinates = restroomAddress.placemark.coordinate
+            let regionRadius: CLLocationDistance = 1000
+            let coordinateRegion = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+            restroomMapView.setRegion(coordinateRegion, animated: false)
+            restroomMapView.setCenter(coordinates, animated: false)
+            loadRestroomsFromMapLocation()
+        } else if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
         searchAreaButton.isHidden = true
@@ -43,6 +53,13 @@ class MapTableRestroomViewController: UIViewController {
     
     @IBAction func searchAreaPressed(_ sender: UIButton) {
         loadRestroomsFromMapLocation()
+    }
+    
+    @IBAction func userLocationPressed(_ sender: UIButton) {
+        if let coordinate = locationManager.location?.coordinate {
+            restroomMapView.setCenter(coordinate, animated: false)
+            userLocationButton.isHidden = true
+        }
     }
     
     func showRestroomTable(showRestroom: IndexPath?) {
@@ -124,6 +141,7 @@ extension MapTableRestroomViewController: UISearchBarDelegate, SelectAddressDele
 
 extension MapTableRestroomViewController: TableRestroomDelegate {
     func selectRestroom(restroom: Restroom) {
+        // Dismiss the restroom table bottom sheet controller
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "ToRestroomSegue", sender: restroom)
     }
@@ -133,6 +151,7 @@ extension MapTableRestroomViewController: TableRestroomDelegate {
 extension MapTableRestroomViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         searchAreaButton.isHidden = false
+        userLocationButton.isHidden = restroomMapView.isUserLocationVisible
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -155,7 +174,7 @@ extension MapTableRestroomViewController: CLLocationManagerDelegate {
             locationManager.requestLocation()
         }
     }
-    
+        
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation: CLLocation = locations[0] as CLLocation
 
