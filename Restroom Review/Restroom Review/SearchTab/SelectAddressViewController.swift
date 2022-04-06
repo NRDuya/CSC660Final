@@ -6,12 +6,12 @@
 import UIKit
 import MapKit
 
-protocol AddAddressDelegate: AnyObject {
-    func addAddress(address: MKMapItem)
+protocol SelectAddressDelegate: AnyObject {
+    func selectAddress(address: MKMapItem)
 }
 
-class ChangeAddressViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, MKLocalSearchCompleterDelegate {
-    weak var delegate: AddAddressDelegate? = nil
+class SelectAddressViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, MKLocalSearchCompleterDelegate {
+    weak var delegate: SelectAddressDelegate? = nil
     var address: String?
     var addressCompleter = MKLocalSearchCompleter()
     var addressResults = [MKLocalSearchCompletion]()
@@ -63,7 +63,7 @@ class ChangeAddressViewController: UIViewController, UITableViewDelegate, UITabl
             guard let add = response?.mapItems[0] else {
                 return
             }
-            self.delegate?.addAddress(address: add)
+            self.delegate?.selectAddress(address: add)
         }
         
         dismiss(animated: true, completion: nil)

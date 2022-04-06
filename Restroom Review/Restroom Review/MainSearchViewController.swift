@@ -1,19 +1,16 @@
 //
-//  SearchViewController.swift
+//  MainSearchViewController.swift
 //  
-//
 
 import UIKit
 
-class SearchViewController: UIViewController, AddRestroomDelegate {
+class MainSearchViewController: UIViewController, AddRestroomDelegate {
     let restroomModel = RestroomModel()
-    let searchController = UISearchController()
     
     @IBAction func unwindSearch(_ segue: UIStoryboardSegue) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.searchController = searchController
     }
 
     func addRestroom(restroom: Restroom) {

@@ -12,7 +12,7 @@ protocol AddRestroomDelegate: AnyObject {
     func addRestroom(restroom: Restroom)
 }
 
-class AddRestroomViewController: UIViewController, AddAddressDelegate  {
+class AddRestroomViewController: UIViewController, SelectAddressDelegate  {
     weak var delegate: AddRestroomDelegate? = nil
     var address: MKMapItem?
     
@@ -28,7 +28,7 @@ class AddRestroomViewController: UIViewController, AddAddressDelegate  {
         performSegue(withIdentifier: "ChangeAddressSegue", sender: self)
     }
 
-    func addAddress(address: MKMapItem) {
+    func selectAddress(address: MKMapItem) {
         self.address = address
         addressText.text = address.placemark.title
     }
@@ -59,7 +59,7 @@ class AddRestroomViewController: UIViewController, AddAddressDelegate  {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let addAddressVC = segue.destination as? ChangeAddressViewController {
+        if let addAddressVC = segue.destination as? SelectAddressViewController {
             addAddressVC.delegate = self
             addAddressVC.address = address?.placemark.title
         }

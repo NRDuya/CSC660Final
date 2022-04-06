@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 class MapTableRestroomViewController: UIViewController {
     let restroomModel = RestroomModel()
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchAreaButton: UIButton!
     @IBOutlet weak var restroomMapView: MKMapView!
     let locationManager = CLLocationManager()
@@ -19,6 +20,7 @@ class MapTableRestroomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         restroomMapView.delegate = self
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -40,10 +42,7 @@ class MapTableRestroomViewController: UIViewController {
     }
     
     @IBAction func searchAreaPressed(_ sender: UIButton) {
-        let center = restroomMapView.centerCoordinate
-        let region = restroomMapView.region
-        restroomMapView.removeAnnotations(restroomMapView.annotations)
-        loadRestroomsFromLocation(center: center, region: region)
+        loadRestroomsFromMapLocation()
     }
     
     func showRestroomTable(showRestroom: IndexPath?) {
@@ -66,7 +65,11 @@ class MapTableRestroomViewController: UIViewController {
         present(nav, animated: true, completion: nil)
     }
     
-    func loadRestroomsFromLocation(center: CLLocationCoordinate2D, region: MKCoordinateRegion) {
+    func loadRestroomsFromMapLocation() {
+        restroomMapView.removeAnnotations(restroomMapView.annotations)
+        let center = restroomMapView.centerCoordinate
+        let region = restroomMapView.region
+        
         let furthest = CLLocation(latitude: center.latitude + (region.span.latitudeDelta / 3),
                                   longitude: center.longitude + (region.span.longitudeDelta / 3))
         let centerLoc = CLLocation(latitude: center.latitude, longitude: center.longitude)
@@ -89,6 +92,33 @@ class MapTableRestroomViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let chooseAddressVC = segue.destination as? SelectAddressViewController {
+            chooseAddressVC.delegate = self
+        }
+        
+        if let restroomVC = segue.destination as? RestroomViewController {
+            if let restroom = sender as? Restroom {
+                restroomVC.restroom = restroom
+            } else if let restroomID = sender as? String {
+                restroomVC.restroomID = restroomID
+            }
+        }
+    }
+}
+
+
+extension MapTableRestroomViewController: UISearchBarDelegate, SelectAddressDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        performSegue(withIdentifier: "ChooseAddressSegue", sender: self)
+    }
+    
+    func selectAddress(address: MKMapItem) {
+        let coordinates = address.placemark.coordinate
+        restroomMapView.setCenter(coordinates, animated: false)
+        loadRestroomsFromMapLocation()
+    }
 }
 
 
@@ -96,14 +126,6 @@ extension MapTableRestroomViewController: TableRestroomDelegate {
     func selectRestroom(restroom: Restroom) {
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "ToRestroomSegue", sender: restroom)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let restroomVC = segue.destination as? RestroomViewController {
-            if let restroom = sender as? Restroom {
-                restroomVC.restroom = restroom
-            }
-        }
     }
 }
 
@@ -139,9 +161,9 @@ extension MapTableRestroomViewController: CLLocationManagerDelegate {
 
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        restroomMapView.setRegion(region, animated: false)
         
-        restroomMapView.setRegion(region, animated: true)
-        loadRestroomsFromLocation(center: center, region: region)
+        loadRestroomsFromMapLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
