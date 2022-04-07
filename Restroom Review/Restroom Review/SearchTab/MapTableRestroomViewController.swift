@@ -72,8 +72,11 @@ class MapTableRestroomViewController: UIViewController {
         if let showRestroom = showRestroom {
             restroomTableVC.showRestroom = showRestroom
         }
-        let nav = UINavigationController(rootViewController: restroomTableVC)
+        if let location = locationManager.location?.coordinate {
+            restroomTableVC.currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        }
         
+        let nav = UINavigationController(rootViewController: restroomTableVC)
         if let sheet = nav.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
             sheet.prefersGrabberVisible = true
@@ -98,6 +101,7 @@ class MapTableRestroomViewController: UIViewController {
                     for restroom in restrooms {
                         let annotation = MKPointAnnotation()
                         annotation.title = restroom.name
+                        annotation.subtitle = restroom.address
                         let coordinates = restroom.location
                         annotation.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
                         restroomMapView.addAnnotation(annotation)
@@ -152,6 +156,16 @@ extension MapTableRestroomViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         searchAreaButton.isHidden = false
         userLocationButton.isHidden = restroomMapView.isUserLocationVisible
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation.isEqual(restroomMapView.userLocation) {
+            return nil
+        }
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
+        annotationView.markerTintColor = UIColor.blue
+        annotationView.glyphImage = UIImage(named: "icons8-toilet-bowl-50")
+        return annotationView
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
