@@ -255,8 +255,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lC5-M3-oNK">
-                                <rect key="frame" x="0.0" y="127" width="414" height="667"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lC5-M3-oNK">
+                                <rect key="frame" x="0.0" y="170" width="414" height="672"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -369,6 +369,106 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZPw-s1-lfJ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestroomTableViewCell" rowHeight="75" id="fsy-NT-KAn" customClass="RestroomTableViewCell" customModule="Restroom_Review" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fsy-NT-KAn" id="1s6-Uh-73q">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-Ok-qM2">
+                                                    <rect key="frame" x="20" y="11" width="345" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="345" id="eB3-J6-X0X"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Restroom Title">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="systemBold" size="18"/>
+                                                                <font key="NSOriginalFont" metaFont="systemBold" size="18"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3v-di-wfn" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="20" y="34" width="104" height="20"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                            <color key="value" name="AccentColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                            <color key="value" systemColor="labelColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                            <color key="value" name="AccentColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                            <color key="value" name="AccentColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="filledBorderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMH-rj-Re2">
+                                                    <rect key="frame" x="368" y="11" width="26" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000000 reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mu-up-0rE">
+                                                    <rect key="frame" x="133" y="36" width="237" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="237" id="HAy-XA-cbp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="J3v-di-wfn" firstAttribute="top" secondItem="cLD-Ok-qM2" secondAttribute="bottom" constant="2" id="Da3-tw-CDy"/>
+                                                <constraint firstItem="5Mu-up-0rE" firstAttribute="leading" secondItem="J3v-di-wfn" secondAttribute="trailing" constant="9" id="Esg-lC-PNE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NMH-rj-Re2" secondAttribute="trailing" id="Gm4-6Z-FzA"/>
+                                                <constraint firstItem="5Mu-up-0rE" firstAttribute="top" secondItem="cLD-Ok-qM2" secondAttribute="bottom" constant="4" id="NFU-Xa-aRT"/>
+                                                <constraint firstItem="cLD-Ok-qM2" firstAttribute="top" secondItem="1s6-Uh-73q" secondAttribute="topMargin" id="VnH-Zq-lWr"/>
+                                                <constraint firstItem="NMH-rj-Re2" firstAttribute="top" secondItem="1s6-Uh-73q" secondAttribute="topMargin" id="XrL-1n-ICX"/>
+                                                <constraint firstItem="cLD-Ok-qM2" firstAttribute="leading" secondItem="1s6-Uh-73q" secondAttribute="leadingMargin" id="Zd3-D2-WaK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="J3v-di-wfn" secondAttribute="bottom" constant="10" id="dq8-w6-wgh"/>
+                                                <constraint firstItem="J3v-di-wfn" firstAttribute="leading" secondItem="1s6-Uh-73q" secondAttribute="leadingMargin" id="itk-K0-oNP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5Mu-up-0rE" secondAttribute="bottom" constant="11" id="pef-J8-RE2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="distance" destination="NMH-rj-Re2" id="qk7-yS-9Fm"/>
+                                            <outlet property="rating" destination="J3v-di-wfn" id="OHn-of-KCg"/>
+                                            <outlet property="restroomTitle" destination="cLD-Ok-qM2" id="58e-LM-Q2N"/>
+                                            <outlet property="reviewAmount" destination="5Mu-up-0rE" id="aUu-gS-LEP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m27-lA-KRm"/>
@@ -386,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zw5-DS-qqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7" y="329"/>
+            <point key="canvasLocation" x="5.7971014492753632" y="328.79464285714283"/>
         </scene>
         <!--Map Table Restroom View Controller-->
         <scene sceneID="rXk-jC-WlT">
@@ -664,13 +764,16 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="J3v-di-wfn">
+            <size key="intrinsicContentSize" width="104" height="20"/>
+        </designable>
         <designable name="aqi-hc-q6R">
             <size key="intrinsicContentSize" width="258" height="50"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Z6U-Ie-It6"/>
-        <segue reference="aTg-R2-57Z"/>
+        <segue reference="4MF-0z-1eW"/>
+        <segue reference="nSJ-WA-wl9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="location" catalog="system" width="128" height="118"/>
