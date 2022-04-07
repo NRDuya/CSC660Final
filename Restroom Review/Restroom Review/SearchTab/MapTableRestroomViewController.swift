@@ -2,8 +2,6 @@
 //  MapTableRestroomViewController.swift
 //  Restroom Review
 //
-//  Created by Nathaniel Duya on 3/31/22.
-//
 
 import UIKit
 import MapKit

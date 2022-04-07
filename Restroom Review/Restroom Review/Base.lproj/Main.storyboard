@@ -300,6 +300,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                                         <color key="value" systemColor="labelColor"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="icons8-toilet-paper-60"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="icons8-toilet-paper-61"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R41-yE-llm">
@@ -430,6 +432,8 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
                                                             <integer key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="icons8-toilet-paper-60"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="icons8-toilet-paper-61"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMH-rj-Re2">
@@ -776,6 +780,8 @@
         <segue reference="nSJ-WA-wl9"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="icons8-toilet-paper-60" width="60" height="60"/>
+        <image name="icons8-toilet-paper-61" width="60" height="60"/>
         <image name="location" catalog="system" width="128" height="118"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
