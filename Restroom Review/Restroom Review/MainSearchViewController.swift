@@ -7,7 +7,9 @@ import MapKit
 
 class MainSearchViewController: UIViewController, UISearchBarDelegate, AddRestroomDelegate, SelectAddressDelegate {
     let restroomModel = RestroomModel()
+    
     @IBOutlet weak var searchBar: UISearchBar!
+
 
     @IBAction func unwindSearch(_ segue: UIStoryboardSegue) {}
     

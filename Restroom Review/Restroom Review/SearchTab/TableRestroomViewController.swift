@@ -24,10 +24,12 @@ class RestroomTableHeader: UITableViewCell {
 
 class TableRestroomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var restroomTableView: UITableView!
+    
     weak var delegate: TableRestroomDelegate? = nil
     var currentLocation: CLLocation?
     var showRestroom: IndexPath?
     var restrooms: [Restroom] = []
+
 
     override func viewDidLoad() {
         navigationController?.setNavigationBarHidden(true, animated: false)

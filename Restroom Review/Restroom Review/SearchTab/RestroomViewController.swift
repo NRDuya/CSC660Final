@@ -4,25 +4,27 @@
 //
 
 import UIKit
+import FirebaseAuthUI
 
 class ReviewCell: UITableViewCell {
-    
 }
 
 class RestroomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddReviewDelegate {
     let restroomModel = RestroomModel()
     let reviewModel = ReviewModel()
     let userModel = UserModel()
-    var restroomID: String?
-    var restroom: Restroom?
-    var reviews: [Review] = []
     
     @IBOutlet weak var restroomName: UILabel!
     @IBOutlet weak var restroomPhone: UILabel!
     @IBOutlet weak var reviewTableView: UITableView!
     
-    @IBAction func unwindSearch(_ segue: UIStoryboardSegue) {}
+    var restroomID: String?
+    var restroom: Restroom?
+    var reviews: [Review] = []
 
+
+    @IBAction func unwindSearch(_ segue: UIStoryboardSegue) {}
+    
     override func viewDidLoad() {
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
@@ -54,8 +56,8 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }
-        
-        if let restroomID = restroomID {
+        // If no restroom passed and ID passed instead
+        else if let restroomID = restroomID {
             Task {
                 do {
                     restroom = try await restroomModel.getRestroomByID(restroomID: restroomID)
@@ -79,6 +81,14 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
                     print(error)
                 }
             }
+        }
+    }
+    
+    @IBAction func addReviewClicked(_ sender: UIButton) {
+        if Auth.auth().currentUser != nil {
+          performSegue(withIdentifier: "ToAddReviewSegue", sender: nil)
+        } else {
+            tabBarController?.selectedIndex = 1
         }
     }
     

@@ -13,12 +13,13 @@ protocol AddRestroomDelegate: AnyObject {
 }
 
 class AddRestroomViewController: UIViewController, SelectAddressDelegate  {
-    weak var delegate: AddRestroomDelegate? = nil
-    var address: MKMapItem?
-    
     @IBOutlet weak var restroomName: UITextField!
     @IBOutlet weak var restroomPhone: UITextField!
     @IBOutlet weak var addressText: UITextField!
+    
+    weak var delegate: AddRestroomDelegate? = nil
+    var address: MKMapItem?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
