@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import FirebaseAuthUI
 
 class ReviewCell: UITableViewCell {
 }

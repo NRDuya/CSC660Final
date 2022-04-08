@@ -9,7 +9,6 @@ import FirebaseEmailAuthUI
 
 class LoginViewController: UIViewController, FUIAuthDelegate {
     let userModel = UserModel()
-    let showNav: Bool? = nil
 
     @IBOutlet weak var usernameLabel: UILabel!
     
