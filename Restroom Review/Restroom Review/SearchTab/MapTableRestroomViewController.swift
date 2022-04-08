@@ -10,13 +10,16 @@ import FirebaseFirestore
 
 class MapTableRestroomViewController: UIViewController {
     let restroomModel = RestroomModel()
+    let locationManager = CLLocationManager()
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchAreaButton: UIButton!
     @IBOutlet weak var userLocationButton: UIButton!
     @IBOutlet weak var restroomMapView: MKMapView!
+    
     var restroomAddress: MKMapItem?
-    let locationManager = CLLocationManager()
     var restrooms: [Restroom] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

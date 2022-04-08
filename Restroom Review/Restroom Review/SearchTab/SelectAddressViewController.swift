@@ -11,13 +11,15 @@ protocol SelectAddressDelegate: AnyObject {
 }
 
 class SelectAddressViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, MKLocalSearchCompleterDelegate {
-    weak var delegate: SelectAddressDelegate? = nil
-    var address: String?
     var addressCompleter = MKLocalSearchCompleter()
-    var addressResults = [MKLocalSearchCompletion]()
-    
+
     @IBOutlet weak var addressTableView: UITableView!
     @IBOutlet weak var addressSearchBar: UISearchBar!
+    
+    weak var delegate: SelectAddressDelegate? = nil
+    var address: String?
+    var addressResults = [MKLocalSearchCompletion]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

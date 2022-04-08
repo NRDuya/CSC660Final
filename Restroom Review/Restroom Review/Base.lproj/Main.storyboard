@@ -204,7 +204,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add a review"/>
                                 <connections>
-                                    <segue destination="E7R-ma-khd" kind="presentation" id="bqS-Ua-Kmf"/>
+                                    <action selector="addReviewClicked:" destination="19n-7D-tQS" eventType="touchUpInside" id="rvX-fE-3Lk"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M65-9l-OBg">
@@ -235,6 +235,7 @@
                         <outlet property="restroomName" destination="Yis-M2-omW" id="NCF-x5-3vU"/>
                         <outlet property="restroomPhone" destination="q9K-Kb-QY0" id="eCO-X2-LB8"/>
                         <outlet property="reviewTableView" destination="M65-9l-OBg" id="HWF-UA-z1H"/>
+                        <segue destination="E7R-ma-khd" kind="presentation" identifier="ToAddReviewSegue" id="buf-yn-Gan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNW-P4-KEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -672,7 +673,7 @@
         <!--Login View Controller-->
         <scene sceneID="gJl-2f-BAg">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Ov-5m-fPo" customClass="LoginViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Ov-5m-fPo" customClass="LoginViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wa8-Vw-bSN" customClass="LoginViewCont">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -730,7 +731,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVj-ec-82g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="-362"/>
+            <point key="canvasLocation" x="-146" y="-362"/>
         </scene>
         <!--Search-->
         <scene sceneID="frd-A4-OiV">

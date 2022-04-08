@@ -13,14 +13,16 @@ protocol AddReviewDelegate: AnyObject {
 
 class AddReviewViewController: UIViewController, UITextViewDelegate {
     let userModel = UserModel()
-    weak var delegate: AddReviewDelegate? = nil
-    var restroom: Restroom?
-    var ratingNumber: Double = 1
     
     @IBOutlet weak var restroomName: UILabel!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var content: UITextView!
+    
+    weak var delegate: AddReviewDelegate? = nil
+    var restroom: Restroom?
+    var ratingNumber: Double = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
