@@ -11,8 +11,10 @@ struct ReviewModel {
     let db = Firestore.firestore()
     
     func createReview(restroomID: String, review: Review) -> String {
-        let newReviewRef = db.collection("Restrooms").document(restroomID).collection("Reviews").document()
+        let restroomRef = db.collection("Restrooms").document(restroomID)
+        let newReviewRef = restroomRef.collection("Reviews").document()
         do {
+            // Set review in review collection
             try newReviewRef.setData(from: review) { err in
                 if let err = err {
                     print("Error adding document: \(err)")
@@ -27,6 +29,23 @@ struct ReviewModel {
                         print("Document successfully written!")
                     }
             }
+            
+            // Update avgRating and numRating in restroom collection
+            restroomRef.getDocument() { document, err in
+                if var restroomData = document?.data() {
+                    let numRating = restroomData["numRating"] as! Int
+                    let newNumRating = numRating + 1
+                    
+                    let avgRating = restroomData["avgRating"] as! Float
+                    let oldAvgTotal = avgRating * Float(numRating)
+                    let newAvgRating = (oldAvgTotal + Float(review.rating)) / Float(newNumRating)
+                    
+                    restroomData["numRating"] = newNumRating
+                    restroomData["avgRating"] = newAvgRating
+                    restroomRef.setData(restroomData)
+                }
+            }
+            
         } catch let error {
             print("Error writing restroom to Firestore: \(error)")
         }

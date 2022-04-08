@@ -16,7 +16,10 @@ class RestroomTableViewCell: UITableViewCell {
     @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var reviewAmount: UILabel!
     @IBOutlet weak var distance: UILabel!
-    
+}
+
+class RestroomTableHeader: UITableViewCell {
+    @IBOutlet weak var headerTitle: UILabel!
 }
 
 class TableRestroomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -27,6 +30,7 @@ class TableRestroomViewController: UIViewController, UITableViewDelegate, UITabl
     var restrooms: [Restroom] = []
 
     override func viewDidLoad() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
         restroomTableView.delegate = self
         restroomTableView.dataSource = self
@@ -44,6 +48,11 @@ class TableRestroomViewController: UIViewController, UITableViewDelegate, UITabl
         restrooms.count
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "RestroomTableHeader") as? RestroomTableHeader
+        return headerCell
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestroomTableViewCell") as? RestroomTableViewCell else {
             return UITableViewCell()
@@ -51,6 +60,8 @@ class TableRestroomViewController: UIViewController, UITableViewDelegate, UITabl
         let restroom = restrooms[indexPath.row]
         
         cell.restroomTitle?.text = restroom.name
+        cell.reviewAmount?.text = "\(restroom.numRating) reviews"
+        cell.rating.rating = Double(restroom.avgRating)
         
         if let currentLocation = currentLocation {
             let restroomGeoPoint = restroom.location

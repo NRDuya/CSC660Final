@@ -36,7 +36,6 @@ class MapTableRestroomViewController: UIViewController {
         } else if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
-        searchAreaButton.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -96,6 +95,8 @@ class MapTableRestroomViewController: UIViewController {
             do {
                 restrooms = try await restroomModel.getRestroomsByBounds(center: center, radius: radius)
                 await MainActor.run {
+                    searchAreaButton.isHidden = true
+                    userLocationButton.isHidden = restroomMapView.isUserLocationVisible
                     for restroom in restrooms {
                         let annotation = MKPointAnnotation()
                         annotation.title = restroom.name
@@ -104,7 +105,6 @@ class MapTableRestroomViewController: UIViewController {
                         annotation.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
                         restroomMapView.addAnnotation(annotation)
                     }
-                    searchAreaButton.isHidden = true
                 }
             } catch {
                 print(error)
