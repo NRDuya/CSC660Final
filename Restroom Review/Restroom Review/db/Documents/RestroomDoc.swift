@@ -25,9 +25,10 @@ public class Restroom: Codable {
     let location: GeoPoint
     let geohash: String
     let address: String
-    let created = FieldValue.serverTimestamp()
     let phone: String?
     let hours: Array<hours>?
+    let avgRating: Float
+    let numRating: Int
 
     init(name: String, location: GeoPoint, geohash: String, address: String, phone: String?) {
         self.name = name
@@ -36,6 +37,8 @@ public class Restroom: Codable {
         self.address = address
         self.phone = phone
         self.hours = nil
+        self.avgRating = 0
+        self.numRating = 0
     }
     
     enum CodingKeys: String, CodingKey {
@@ -46,5 +49,7 @@ public class Restroom: Codable {
         case address
         case phone
         case hours
+        case avgRating
+        case numRating
     }
 }

@@ -300,8 +300,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                                         <color key="value" systemColor="labelColor"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="icons8-toilet-paper-60"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="icons8-toilet-paper-61"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="toilet-paper-filled"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="toilet-paper"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R41-yE-llm">
@@ -368,12 +368,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZPw-s1-lfJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZPw-s1-lfJ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
+                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestroomTableHeader" rowHeight="62" id="IOS-6Y-txW" customClass="RestroomTableHeader" customModule="Restroom_Review" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IOS-6Y-txW" id="nCz-BY-I4t" customClass="Table">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-SQ-cvI">
+                                                    <rect key="frame" x="20" y="26" width="345" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="Or8-wJ-X64"/>
+                                                        <constraint firstAttribute="width" constant="345" id="ucY-i0-pGE"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Results">
+                                                            <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" metaFont="systemBold" size="30"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Wsb-SQ-cvI" firstAttribute="top" secondItem="nCz-BY-I4t" secondAttribute="topMargin" constant="15" id="03o-f0-z09"/>
+                                                <constraint firstItem="Wsb-SQ-cvI" firstAttribute="leading" secondItem="nCz-BY-I4t" secondAttribute="leadingMargin" id="F13-0W-2Tf"/>
+                                                <constraint firstItem="Wsb-SQ-cvI" firstAttribute="bottom" secondItem="nCz-BY-I4t" secondAttribute="bottomMargin" id="SFk-5J-gPM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestroomTableViewCell" rowHeight="75" id="fsy-NT-KAn" customClass="RestroomTableViewCell" customModule="Restroom_Review" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="111.5" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fsy-NT-KAn" id="1s6-Uh-73q">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
@@ -432,8 +465,8 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
                                                             <integer key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="icons8-toilet-paper-60"/>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="icons8-toilet-paper-61"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="toilet-paper-filled"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="toilet-paper"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMH-rj-Re2">
@@ -520,13 +553,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-XG-Z8G">
                                 <rect key="frame" x="130" y="151" width="154" height="30"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fza-yN-P1s"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Search This Area"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Search This Area">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="searchAreaPressed:" destination="X2I-gZ-lJz" eventType="touchUpInside" id="xvq-Cl-XMv"/>
                                 </connections>
@@ -776,13 +810,13 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="4MF-0z-1eW"/>
-        <segue reference="nSJ-WA-wl9"/>
+        <segue reference="Z6U-Ie-It6"/>
+        <segue reference="aTg-R2-57Z"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="icons8-toilet-paper-60" width="60" height="60"/>
-        <image name="icons8-toilet-paper-61" width="60" height="60"/>
         <image name="location" catalog="system" width="128" height="118"/>
+        <image name="toilet-paper" width="60" height="60"/>
+        <image name="toilet-paper-filled" width="60" height="60"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -792,6 +826,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
