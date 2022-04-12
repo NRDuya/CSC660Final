@@ -61,8 +61,8 @@ class TableRestroomViewController: UIViewController, UITableViewDelegate, UITabl
         }
         let restroom = restrooms[indexPath.row]
         
-        cell.restroomTitle?.text = restroom.name
-        cell.reviewAmount?.text = "\(restroom.numRating) reviews"
+        cell.restroomTitle.text = restroom.name
+        cell.reviewAmount.text = "\(restroom.numRating) reviews"
         cell.rating.rating = Double(restroom.avgRating)
         
         if let currentLocation = currentLocation {

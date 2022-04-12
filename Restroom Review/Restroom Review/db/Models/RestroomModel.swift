@@ -35,10 +35,12 @@ struct RestroomModel {
         return newRestroomRef.documentID
     }
     
+    
     func getRestroomByID(restroomID: String) async throws -> Restroom {
         let restroomRef = db.collection("Restrooms").document(restroomID)
         return try await restroomRef.getDocument(as: Restroom.self)
     }
+    
     
     func getRestroomsByBounds(center: CLLocationCoordinate2D, radius: Double) async throws -> [Restroom] {
         let queryBounds = GFUtils.queryBounds(forLocation: center, withRadius: radius)
@@ -66,4 +68,16 @@ struct RestroomModel {
         }
         return restrooms
     }
+    
+    
+    func getRestroomName(restroomID: String) async throws -> String {
+        let restroom = try await db.document(restroomID).getDocument()
+        
+        var restroomName = "No name"
+        if let restroomData = restroom.data() {
+            restroomName = restroomData["name"] as? String ?? "No name"
+        }
+        return restroomName
+    }
+    
 }

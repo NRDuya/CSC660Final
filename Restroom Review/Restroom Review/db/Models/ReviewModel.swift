@@ -8,6 +8,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct ReviewModel {
+    let userModel = UserModel()
     let db = Firestore.firestore()
     
     func createReview(restroomID: String, review: Review) -> String {
@@ -59,5 +60,19 @@ struct ReviewModel {
         return restroomReviews.documents.compactMap { review in      
             return try? review.data(as: Review.self)
         }   
+    }
+    
+    func getReviewsByUser(userID: String) async throws -> [Review] {
+        let id = userModel.getUserRefPath(userID: userID)
+        let reviews = try await db.collectionGroup("Reviews").whereField("author", isEqualTo: id).getDocuments()
+
+        return reviews.documents.compactMap { reviewData in
+            let review = try? reviewData.data(as: Review.self)
+            
+            let parentPath = reviewData.reference.parent.parent
+            review?.restroom = parentPath?.path
+            
+            return review
+        }
     }
 }

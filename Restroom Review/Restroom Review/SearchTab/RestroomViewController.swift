@@ -4,11 +4,17 @@
 //
 
 import UIKit
+import FirebaseAuthUI
+import Cosmos
 
-class ReviewCell: UITableViewCell {
+class ReviewTableViewCell: UITableViewCell {
+    @IBOutlet weak var rating: CosmosView!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var age: UILabel!
+    @IBOutlet weak var content: UILabel!
 }
 
-class RestroomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddReviewDelegate {
+class RestroomViewController: UIViewController, AddReviewDelegate {
     let restroomModel = RestroomModel()
     let reviewModel = ReviewModel()
     let userModel = UserModel()
@@ -27,15 +33,8 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
-        reviewTableView.register(ReviewCell.self, forCellReuseIdentifier: "ReviewCell")
-        
-        super.viewDidLoad()
         // If restroom was passed down
         if let restroom = restroom {
-            restroomName.text = restroom.name
-            if let phone = restroom.phone {
-                restroomPhone.text = phone
-            }
             Task {
                 do {
                     guard let restroomDocID = restroom.documentID else {
@@ -60,20 +59,12 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
             Task {
                 do {
                     restroom = try await restroomModel.getRestroomByID(restroomID: restroomID)
-                    guard let restroom = restroom else {
-                        return
-                    }
-
                     reviews = try await reviewModel.getReviewsByRestroom(restroomID: restroomID)
                     for review in reviews {
                         review.displayName = try await userModel.getUserDisplayname(userRef: review.author.path)
                     }
                     
                     await MainActor.run {
-                        restroomName.text = restroom.name
-                        if let phone = restroom.phone {
-                            restroomPhone.text = phone
-                        }
                         reviewTableView.reloadData()
                     }
                 } catch {
@@ -81,6 +72,14 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }
+        
+        if let restroom = restroom {
+            restroomName.text = restroom.name
+            if let phone = restroom.phone {
+                restroomPhone.text = phone
+            }
+        }
+        super.viewDidLoad()
     }
     
     @IBAction func addReviewClicked(_ sender: UIButton) {
@@ -89,20 +88,6 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             tabBarController?.selectedIndex = 1
         }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        reviews.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = reviewTableView.dequeueReusableCell(withIdentifier: "ReviewCell") as? ReviewCell else {
-            return UITableViewCell()
-        }
-        
-        let review = reviews[indexPath.row]
-        cell.textLabel?.text = "\(review.displayName) \(review.content)"
-        return cell
     }
     
     func addReview(review: Review) {
@@ -127,4 +112,51 @@ class RestroomViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+}
+
+
+extension RestroomViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        reviews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = reviewTableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") as? ReviewTableViewCell else {
+            return UITableViewCell()
+        }
+        let review = reviews[indexPath.row]
+        
+        cell.rating.rating = review.rating
+        cell.content.text = review.content
+        if let username = review.displayName {
+            cell.username.text = username
+        }
+        
+        if let created = review.created {
+            let date = Date()
+            let difference = Calendar.current.dateComponents([.month, .hour, .day], from: created, to: date)
+            
+            if let month = difference.month, let day = difference.day, let hour = difference.hour {
+                if (month == 0) {
+                    if (day == 0) {
+                        cell.age.text = handlePluralOrSingular(time: hour, component: "hour")
+                    } else {
+                        cell.age.text = handlePluralOrSingular(time: day, component: "day")
+                    }
+                } else {
+                    cell.age.text = handlePluralOrSingular(time: month, component: "month")
+                }
+            }
+        }
+
+        return cell
+    }
+    
+    func handlePluralOrSingular(time: Int, component: String) -> String{
+        if (time > 1) {
+            return "\(time) \(component)s ago"
+        } else {
+            return "\(time) \(component) ago"
+        }
+    }
 }
