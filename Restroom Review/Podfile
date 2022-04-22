@@ -19,4 +19,5 @@ pod 'FirebaseFirestoreSwift', '8.13.0-beta'
 pod 'GeoFire/Utils'
 
 pod 'Cosmos', '~> 23.0'
+pod 'lottie-ios'
 end

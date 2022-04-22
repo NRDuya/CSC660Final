@@ -57,12 +57,8 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
                 print(error)
             }
         }
-        // populate user reviews
     }
-    
-    @IBAction func viewSavedBathrooms(_ sender: UIButton) {
-        print("PUSH")
-    }
+
 
     @IBAction func logoutButtonClicked(_ sender: UIButton) {
         do {

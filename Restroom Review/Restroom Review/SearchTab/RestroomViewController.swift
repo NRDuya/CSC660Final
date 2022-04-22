@@ -5,6 +5,8 @@
 
 import UIKit
 import FirebaseAuthUI
+import CoreLocation
+import MapKit
 import Cosmos
 
 class ReviewTableViewCell: UITableViewCell {
@@ -18,8 +20,9 @@ class RestroomViewController: UIViewController, AddReviewDelegate {
     let restroomModel = RestroomModel()
     let reviewModel = ReviewModel()
     let userModel = UserModel()
-    
+
     @IBOutlet weak var restroomName: UILabel!
+    @IBOutlet weak var restroomAddress: UILabel!
     @IBOutlet weak var restroomPhone: UILabel!
     @IBOutlet weak var reviewTableView: UITableView!
     
@@ -75,11 +78,21 @@ class RestroomViewController: UIViewController, AddReviewDelegate {
         
         if let restroom = restroom {
             restroomName.text = restroom.name
-            if let phone = restroom.phone {
-                restroomPhone.text = phone
-            }
+            restroomPhone.text = restroom.phone ?? "No phone number found"
+            restroomAddress.text = restroom.address
+            let tap = UITapGestureRecognizer(target: self, action: #selector(RestroomViewController.addressClicked))
+            restroomAddress.addGestureRecognizer(tap)
         }
         super.viewDidLoad()
+    }
+    
+    @IBAction func addressClicked(sender: UITapGestureRecognizer) {
+        coordinates(forAddress: restroomAddress.text ?? "") { location in
+            guard let location = location else {
+                return
+            }
+            self.openMapForPlace(lat: location.latitude, long: location.longitude)
+        }
     }
     
     @IBAction func addReviewClicked(_ sender: UIButton) {
@@ -158,5 +171,37 @@ extension RestroomViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return "\(time) \(component) ago"
         }
+    }
+}
+
+extension RestroomViewController {
+    func coordinates(forAddress address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) {
+            (placemarks, error) in
+            guard error == nil else {
+                print("Geocoding error: \(error!)")
+                completion(nil)
+                return
+            }
+            completion(placemarks?.first?.location?.coordinate)
+        }
+    }
+    
+    func openMapForPlace(lat:Double = 0, long:Double = 0, placeName:String = "") {
+        let latitude: CLLocationDegrees = lat
+        let longitude: CLLocationDegrees = long
+
+        let regionDistance:CLLocationDistance = 100
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = placeName
+        mapItem.openInMaps(launchOptions: options)
     }
 }

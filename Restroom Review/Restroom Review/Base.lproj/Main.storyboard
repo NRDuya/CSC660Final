@@ -193,14 +193,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9K-Kb-QY0">
-                                <rect key="frame" x="0.0" y="125" width="414" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9K-Kb-QY0">
+                                <rect key="frame" x="0.0" y="125" width="414" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooh-8M-ku5">
-                                <rect key="frame" x="0.0" y="161" width="414" height="31"/>
+                                <rect key="frame" x="0.0" y="171" width="414" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add a review"/>
                                 <connections>
@@ -208,7 +208,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="600" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M65-9l-OBg">
-                                <rect key="frame" x="0.0" y="193" width="414" height="620"/>
+                                <rect key="frame" x="0.0" y="203" width="414" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewTableViewCell" rowHeight="92" id="HZa-XU-eab" customClass="ReviewTableViewCell" customModule="Restroom_Review" customModuleProvider="target">
@@ -303,13 +303,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjL-rS-zNu">
+                                <rect key="frame" x="0.0" y="150" width="414" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Im-vF-4jg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Im-vF-4jg" firstAttribute="trailing" secondItem="Yis-M2-omW" secondAttribute="trailing" id="4SU-fS-vXQ"/>
-                            <constraint firstItem="Ooh-8M-ku5" firstAttribute="top" secondItem="q9K-Kb-QY0" secondAttribute="bottom" constant="15" id="7zC-d5-Zqo"/>
                             <constraint firstItem="2Im-vF-4jg" firstAttribute="trailing" secondItem="Ooh-8M-ku5" secondAttribute="trailing" id="CHp-1u-XQ4"/>
+                            <constraint firstItem="Ooh-8M-ku5" firstAttribute="top" secondItem="fjL-rS-zNu" secondAttribute="bottom" constant="4" id="DXw-Mr-lOB"/>
                             <constraint firstItem="2Im-vF-4jg" firstAttribute="bottom" secondItem="M65-9l-OBg" secondAttribute="bottom" id="Fr4-cm-fEh"/>
                             <constraint firstItem="2Im-vF-4jg" firstAttribute="trailing" secondItem="q9K-Kb-QY0" secondAttribute="trailing" id="HOz-hF-N6Y"/>
                             <constraint firstItem="q9K-Kb-QY0" firstAttribute="top" secondItem="Yis-M2-omW" secondAttribute="bottom" constant="8" id="JxA-V0-1XH"/>
@@ -317,15 +323,19 @@
                             <constraint firstItem="q9K-Kb-QY0" firstAttribute="leading" secondItem="2Im-vF-4jg" secondAttribute="leading" id="bER-YW-3fR"/>
                             <constraint firstItem="M65-9l-OBg" firstAttribute="leading" secondItem="2Im-vF-4jg" secondAttribute="leading" id="rBg-eh-r81"/>
                             <constraint firstItem="Yis-M2-omW" firstAttribute="leading" secondItem="2Im-vF-4jg" secondAttribute="leading" id="riN-rw-znf"/>
+                            <constraint firstItem="fjL-rS-zNu" firstAttribute="top" secondItem="q9K-Kb-QY0" secondAttribute="bottom" constant="7" id="t7c-k6-XwD"/>
+                            <constraint firstItem="2Im-vF-4jg" firstAttribute="trailing" secondItem="fjL-rS-zNu" secondAttribute="trailing" id="tA4-i1-eSJ"/>
                             <constraint firstItem="Ooh-8M-ku5" firstAttribute="leading" secondItem="2Im-vF-4jg" secondAttribute="leading" id="tr0-tn-QcA"/>
+                            <constraint firstItem="fjL-rS-zNu" firstAttribute="leading" secondItem="2Im-vF-4jg" secondAttribute="leading" id="uFV-5L-wGS"/>
                             <constraint firstItem="M65-9l-OBg" firstAttribute="top" secondItem="Ooh-8M-ku5" secondAttribute="bottom" constant="1" id="uQh-bM-A1P"/>
                             <constraint firstItem="Yis-M2-omW" firstAttribute="top" secondItem="2Im-vF-4jg" secondAttribute="top" id="wej-3n-G5p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dlg-RQ-QzB"/>
                     <connections>
+                        <outlet property="restroomAddress" destination="q9K-Kb-QY0" id="eCO-X2-LB8"/>
                         <outlet property="restroomName" destination="Yis-M2-omW" id="NCF-x5-3vU"/>
-                        <outlet property="restroomPhone" destination="q9K-Kb-QY0" id="eCO-X2-LB8"/>
+                        <outlet property="restroomPhone" destination="fjL-rS-zNu" id="EGI-4C-cNB"/>
                         <outlet property="reviewTableView" destination="M65-9l-OBg" id="HWF-UA-z1H"/>
                         <segue destination="E7R-ma-khd" kind="presentation" identifier="ToAddReviewSegue" id="buf-yn-Gan"/>
                     </connections>
@@ -953,21 +963,33 @@
             </objects>
             <point key="canvasLocation" x="-881" y="-361"/>
         </scene>
-        <!--View Controller-->
+        <!--Main More View Controller-->
         <scene sceneID="GeH-qz-ZMq">
             <objects>
-                <viewController id="6Fg-Oq-rVh" sceneMemberID="viewController">
+                <viewController id="6Fg-Oq-rVh" customClass="MainMoreViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mgu-I8-PKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SFf-Jz-lWW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4Ut-XP-U3t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SFf-Jz-lWW" firstAttribute="top" secondItem="4Ut-XP-U3t" secondAttribute="top" id="IA5-Rn-KJ4"/>
+                            <constraint firstItem="SFf-Jz-lWW" firstAttribute="leading" secondItem="4Ut-XP-U3t" secondAttribute="leading" id="k0C-mW-LdT"/>
+                            <constraint firstItem="4Ut-XP-U3t" firstAttribute="bottom" secondItem="SFf-Jz-lWW" secondAttribute="bottom" id="lVI-GM-2zX"/>
+                            <constraint firstItem="4Ut-XP-U3t" firstAttribute="trailing" secondItem="SFf-Jz-lWW" secondAttribute="trailing" id="wWR-Kd-1Fo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oks-An-bwJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsy-y7-lIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288" y="-362"/>
+            <point key="canvasLocation" x="1426" y="-362"/>
         </scene>
     </scenes>
     <designables>
