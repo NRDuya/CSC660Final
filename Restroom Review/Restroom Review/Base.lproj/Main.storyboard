@@ -1000,7 +1000,7 @@
             </objects>
             <point key="canvasLocation" x="1426" y="-362"/>
         </scene>
-        <!--Update Name View Controller-->
+        <!--Update Name-->
         <scene sceneID="F0G-jp-iYA">
             <objects>
                 <viewController id="M2e-Hb-ce2" customClass="UpdateNameViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
@@ -1012,37 +1012,49 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T4m-Vb-hOg">
-                                <rect key="frame" x="81" y="165" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T4m-Vb-hOg">
+                                <rect key="frame" x="100" y="131" width="214" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rn-qp-m4B">
-                                <rect key="frame" x="186" y="96" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Display Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rn-qp-m4B">
+                                <rect key="frame" x="0.0" y="81" width="414" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yjh-bN-pfg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yjh-bN-pfg" firstAttribute="trailing" secondItem="7Rn-qp-m4B" secondAttribute="trailing" id="CtG-qD-18A"/>
+                            <constraint firstItem="7Rn-qp-m4B" firstAttribute="top" secondItem="Yjh-bN-pfg" secondAttribute="top" constant="25" id="TQh-y8-qu0"/>
+                            <constraint firstItem="7Rn-qp-m4B" firstAttribute="leading" secondItem="Yjh-bN-pfg" secondAttribute="leading" id="YjU-qP-296"/>
+                            <constraint firstItem="Yjh-bN-pfg" firstAttribute="trailing" secondItem="T4m-Vb-hOg" secondAttribute="trailing" constant="100" id="bxu-5X-ItS"/>
+                            <constraint firstItem="T4m-Vb-hOg" firstAttribute="top" secondItem="7Rn-qp-m4B" secondAttribute="bottom" constant="20" id="o6Y-Lu-R1y"/>
+                            <constraint firstItem="T4m-Vb-hOg" firstAttribute="leading" secondItem="Yjh-bN-pfg" secondAttribute="leading" constant="100" id="zNw-V4-ySo"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2Wn-yG-66b">
+                    <navigationItem key="navigationItem" title="Update Name" id="2Wn-yG-66b">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="zCz-NZ-Liu">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="kOM-XE-LTV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="kOM-XE-LTV">
                                 <rect key="frame" x="302" y="11" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <connections>
+                                    <action selector="updateName:" destination="M2e-Hb-ce2" eventType="touchUpInside" id="HnD-6Z-mkd"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="displayName" destination="T4m-Vb-hOg" id="MYd-es-bU8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSt-N1-HSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="-362"/>
+            <point key="canvasLocation" x="2953.6231884057975" y="-362.27678571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ViU-rl-jED">
@@ -1078,8 +1090,8 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Z6U-Ie-It6"/>
-        <segue reference="aTg-R2-57Z"/>
+        <segue reference="4MF-0z-1eW"/>
+        <segue reference="nSJ-WA-wl9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="location" catalog="system" width="128" height="118"/>
