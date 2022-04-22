@@ -23,6 +23,7 @@ class AddRestroomViewController: UIViewController, SelectAddressDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        restroomPhone.delegate = self
     }
     
     @IBAction func addressClicked(_ sender: UITextField) {
@@ -64,5 +65,13 @@ class AddRestroomViewController: UIViewController, SelectAddressDelegate  {
             addAddressVC.delegate = self
             addAddressVC.address = address?.placemark.title
         }
+    }
+}
+
+extension AddRestroomViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
     }
 }
