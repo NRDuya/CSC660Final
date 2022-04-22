@@ -2,8 +2,6 @@
 //  UpdateNameViewController.swift
 //  Restroom Review
 //
-//  Created by Nathaniel Duya on 4/21/22.
-//
 
 import UIKit
 import FirebaseAuthUI
