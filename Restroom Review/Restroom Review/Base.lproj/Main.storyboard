@@ -721,56 +721,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynZ-2c-PnD">
-                                <rect key="frame" x="20" y="497" width="374" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynZ-2c-PnD">
+                                <rect key="frame" x="0.0" y="266" width="434" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add A Restroom"/>
                                 <connections>
                                     <segue destination="BrI-pj-8vm" kind="presentation" id="O6F-2z-AsP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPb-YB-ArN">
-                                <rect key="frame" x="174" y="300" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPb-YB-ArN">
+                                <rect key="frame" x="0.0" y="225" width="434" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="View Restrooms"/>
                                 <connections>
-                                    <segue destination="X2I-gZ-lJz" kind="show" identifier="ToRestroomMapSegue" id="f4n-vg-AgX"/>
+                                    <segue destination="X2I-gZ-lJz" kind="show" identifier="ToRestroomMapSegue" id="04U-aJ-YvY"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="h4h-4s-trx">
-                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="88" width="434" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restroom Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmY-WZ-72C">
-                                <rect key="frame" x="50" y="139" width="314" height="51"/>
+                                <rect key="frame" x="50" y="149" width="334" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8m-Py-sE7" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="126" y="127" width="559" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="559" id="Q9e-JW-ffF"/>
+                                    <constraint firstAttribute="height" constant="715" id="xhJ-Gs-bQ4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="ToiletAnimation"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eVR-YY-yKJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h4h-4s-trx" firstAttribute="top" secondItem="eVR-YY-yKJ" secondAttribute="top" id="0MW-3R-7tL"/>
-                            <constraint firstItem="EmY-WZ-72C" firstAttribute="top" secondItem="h4h-4s-trx" secondAttribute="bottom" id="fnp-en-heD"/>
+                            <constraint firstItem="ynZ-2c-PnD" firstAttribute="leading" secondItem="eVR-YY-yKJ" secondAttribute="leading" id="5lm-8K-8tN"/>
+                            <constraint firstItem="eVR-YY-yKJ" firstAttribute="trailing" secondItem="DPb-YB-ArN" secondAttribute="trailing" id="71r-Hg-raQ"/>
+                            <constraint firstItem="ynZ-2c-PnD" firstAttribute="top" secondItem="DPb-YB-ArN" secondAttribute="bottom" constant="5" id="ATC-01-ZFf"/>
+                            <constraint firstItem="DPb-YB-ArN" firstAttribute="leading" secondItem="eVR-YY-yKJ" secondAttribute="leading" id="Euu-eG-SUR"/>
+                            <constraint firstItem="k8m-Py-sE7" firstAttribute="top" secondItem="zjq-43-12T" secondAttribute="topMargin" constant="39" id="Flv-4y-PxD"/>
+                            <constraint firstItem="DPb-YB-ArN" firstAttribute="top" secondItem="EmY-WZ-72C" secondAttribute="bottom" constant="25" id="Gja-6i-L3I"/>
+                            <constraint firstItem="k8m-Py-sE7" firstAttribute="leading" secondItem="eVR-YY-yKJ" secondAttribute="leading" constant="126" id="Oef-sP-Fcz"/>
+                            <constraint firstItem="eVR-YY-yKJ" firstAttribute="bottom" secondItem="k8m-Py-sE7" secondAttribute="bottom" constant="49" id="PPI-Mi-jxQ"/>
+                            <constraint firstItem="EmY-WZ-72C" firstAttribute="top" secondItem="h4h-4s-trx" secondAttribute="bottom" constant="10" id="fnp-en-heD"/>
                             <constraint firstItem="h4h-4s-trx" firstAttribute="leading" secondItem="eVR-YY-yKJ" secondAttribute="leading" id="owf-cy-38U"/>
                             <constraint firstItem="h4h-4s-trx" firstAttribute="trailing" secondItem="eVR-YY-yKJ" secondAttribute="trailing" id="rVN-nw-hxg"/>
                             <constraint firstItem="EmY-WZ-72C" firstAttribute="leading" secondItem="eVR-YY-yKJ" secondAttribute="leading" constant="50" id="vBM-XI-Wbz"/>
+                            <constraint firstItem="eVR-YY-yKJ" firstAttribute="trailing" secondItem="ynZ-2c-PnD" secondAttribute="trailing" id="vTO-pe-U0c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k8m-Py-sE7" secondAttribute="trailing" constant="-271" id="yU9-mn-NXg"/>
                             <constraint firstItem="eVR-YY-yKJ" firstAttribute="trailing" secondItem="EmY-WZ-72C" secondAttribute="trailing" constant="50" id="z3l-TY-Mhv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="71b-mt-gPY"/>
                     <connections>
                         <outlet property="searchBar" destination="h4h-4s-trx" id="oLR-GX-pzk"/>
+                        <outlet property="toiletAnimationView" destination="k8m-Py-sE7" id="ged-GQ-nUP"/>
                         <segue destination="19n-7D-tQS" kind="show" identifier="ToRestroomSegue" id="4MF-0z-1eW"/>
                         <segue destination="Yry-GW-nqt" kind="presentation" identifier="ChooseAddressSearchSegue" id="nSJ-WA-wl9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MoY-6d-XjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1571.0144927536232" y="330.80357142857139"/>
+            <point key="canvasLocation" x="-1571.0144927536232" y="330.13392857142856"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="gJl-2f-BAg">
@@ -1083,6 +1103,7 @@
         <designable name="f1u-GT-EnI">
             <size key="intrinsicContentSize" width="104" height="20"/>
         </designable>
+        <designable name="k8m-Py-sE7"/>
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="4MF-0z-1eW"/>

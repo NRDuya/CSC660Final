@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0210762813D19600BCFE82 /* ToiletAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0210752813D19600BCFE82 /* ToiletAnimation.json */; };
 		CD04EA5727D8A01600D90366 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD04EA5627D8A01600D90366 /* GoogleService-Info.plist */; };
 		CD0A381127E514EE00937BF6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381027E514EE00937BF6 /* UserModel.swift */; };
 		CD0A381327E855BC00937BF6 /* RestroomDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A381227E855BC00937BF6 /* RestroomDoc.swift */; };
@@ -35,6 +36,7 @@
 		449698A576B8C20B28382F5C /* Pods-Restroom Review.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restroom Review.debug.xcconfig"; path = "Target Support Files/Pods-Restroom Review/Pods-Restroom Review.debug.xcconfig"; sourceTree = "<group>"; };
 		466CB6B8FC2F549A552EC35A /* Pods-Restroom Review.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restroom Review.release.xcconfig"; path = "Target Support Files/Pods-Restroom Review/Pods-Restroom Review.release.xcconfig"; sourceTree = "<group>"; };
 		8E851D564F9E2E2AFF8C865E /* Pods_Restroom_Review.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Restroom_Review.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD0210752813D19600BCFE82 /* ToiletAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ToiletAnimation.json; sourceTree = "<group>"; };
 		CD04EA5627D8A01600D90366 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CD0A381027E514EE00937BF6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CD0A381227E855BC00937BF6 /* RestroomDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomDoc.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				CDA7BA7727D209D60071497C /* AppDelegate.swift */,
 				CDA7BA7927D209D60071497C /* SceneDelegate.swift */,
 				CDA7BA7D27D209D60071497C /* Main.storyboard */,
+				CD0210752813D19600BCFE82 /* ToiletAnimation.json */,
 				CDA7BA8027D209D70071497C /* Assets.xcassets */,
 				CDA7BA8227D209D70071497C /* LaunchScreen.storyboard */,
 				CD04EA5627D8A01600D90366 /* GoogleService-Info.plist */,
@@ -247,6 +250,7 @@
 			files = (
 				CDA7BA8427D209D70071497C /* LaunchScreen.storyboard in Resources */,
 				CD04EA5727D8A01600D90366 /* GoogleService-Info.plist in Resources */,
+				CD0210762813D19600BCFE82 /* ToiletAnimation.json in Resources */,
 				CDA7BA8127D209D70071497C /* Assets.xcassets in Resources */,
 				CDA7BA7F27D209D60071497C /* Main.storyboard in Resources */,
 			);

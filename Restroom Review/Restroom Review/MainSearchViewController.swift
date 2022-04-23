@@ -4,18 +4,23 @@
 
 import UIKit
 import MapKit
+import Lottie
 
 class MainSearchViewController: UIViewController, UISearchBarDelegate, AddRestroomDelegate, SelectAddressDelegate {
     let restroomModel = RestroomModel()
     
+    @IBOutlet weak var toiletAnimationView: AnimationView!
+    
     @IBOutlet weak var searchBar: UISearchBar!
-
-
+    
     @IBAction func unwindSearch(_ segue: UIStoryboardSegue) {}
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         searchBar.delegate = self
+        toiletAnimationView.contentMode = .scaleAspectFit
+        toiletAnimationView.animationSpeed = 0.75
+        super.viewDidLoad()
+        toiletAnimationView.play()
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
