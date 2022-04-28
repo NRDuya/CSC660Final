@@ -89,7 +89,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123 Main St San Francisco, CA  94102" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-pO-MZj">
                                 <rect key="frame" x="38" y="177" width="338" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="street-address"/>
                                 <connections>
                                     <action selector="addressClicked:" destination="BrI-pj-8vm" eventType="editingDidBegin" id="0vs-pp-Mhz"/>
                                 </connections>
@@ -103,7 +103,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(555) 555-5555 " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVO-Ht-Ags">
                                 <rect key="frame" x="38" y="252" width="137.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s96-JB-kyy">
                                 <rect key="frame" x="38" y="76" width="45" height="21"/>
@@ -626,7 +626,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zw5-DS-qqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="330"/>
+            <point key="canvasLocation" x="-101" y="329"/>
         </scene>
         <!--Map Table Restroom View Controller-->
         <scene sceneID="rXk-jC-WlT">
@@ -722,7 +722,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynZ-2c-PnD">
-                                <rect key="frame" x="0.0" y="266" width="434" height="31"/>
+                                <rect key="frame" x="0.0" y="266" width="410" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add A Restroom"/>
                                 <connections>
@@ -730,7 +730,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPb-YB-ArN">
-                                <rect key="frame" x="0.0" y="225" width="434" height="36"/>
+                                <rect key="frame" x="0.0" y="225" width="410" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="View Restrooms"/>
@@ -739,17 +739,17 @@
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="h4h-4s-trx">
-                                <rect key="frame" x="0.0" y="88" width="434" height="51"/>
+                                <rect key="frame" x="0.0" y="88" width="410" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restroom Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmY-WZ-72C">
-                                <rect key="frame" x="50" y="149" width="334" height="51"/>
+                                <rect key="frame" x="50" y="149" width="310" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8m-Py-sE7" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="126" y="127" width="559" height="0.0"/>
+                                <rect key="frame" x="126" y="127" width="559" height="715"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="559" id="Q9e-JW-ffF"/>
                                     <constraint firstAttribute="height" constant="715" id="xhJ-Gs-bQ4"/>
@@ -770,7 +770,6 @@
                             <constraint firstItem="k8m-Py-sE7" firstAttribute="top" secondItem="zjq-43-12T" secondAttribute="topMargin" constant="39" id="Flv-4y-PxD"/>
                             <constraint firstItem="DPb-YB-ArN" firstAttribute="top" secondItem="EmY-WZ-72C" secondAttribute="bottom" constant="25" id="Gja-6i-L3I"/>
                             <constraint firstItem="k8m-Py-sE7" firstAttribute="leading" secondItem="eVR-YY-yKJ" secondAttribute="leading" constant="126" id="Oef-sP-Fcz"/>
-                            <constraint firstItem="eVR-YY-yKJ" firstAttribute="bottom" secondItem="k8m-Py-sE7" secondAttribute="bottom" constant="49" id="PPI-Mi-jxQ"/>
                             <constraint firstItem="EmY-WZ-72C" firstAttribute="top" secondItem="h4h-4s-trx" secondAttribute="bottom" constant="10" id="fnp-en-heD"/>
                             <constraint firstItem="h4h-4s-trx" firstAttribute="leading" secondItem="eVR-YY-yKJ" secondAttribute="leading" id="owf-cy-38U"/>
                             <constraint firstItem="h4h-4s-trx" firstAttribute="trailing" secondItem="eVR-YY-yKJ" secondAttribute="trailing" id="rVN-nw-hxg"/>
@@ -1009,6 +1008,7 @@
                     <connections>
                         <outlet property="moreTableView" destination="SFf-Jz-lWW" id="wej-gD-WRI"/>
                         <segue destination="Eef-rx-Ox5" kind="presentation" identifier="UpdateNameSegue" id="hao-4K-j3s"/>
+                        <segue destination="3FF-oF-adv" kind="presentation" identifier="UpdatePasswordSegue" id="On5-rs-Gbq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsy-y7-lIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1069,7 +1069,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSt-N1-HSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953.6231884057975" y="-362.27678571428572"/>
+            <point key="canvasLocation" x="2957" y="-651"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ViU-rl-jED">
@@ -1087,7 +1087,99 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wg2-Rp-tOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="-362"/>
+            <point key="canvasLocation" x="2188" y="-651"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yK5-MY-9ad">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3FF-oF-adv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="faM-mX-psc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IER-La-cbK" kind="relationship" relationship="rootViewController" id="Aa6-EG-ICH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WoP-Ti-Ofx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2187" y="12"/>
+        </scene>
+        <!--Update Password-->
+        <scene sceneID="kmi-RQ-J6i">
+            <objects>
+                <viewController id="IER-La-cbK" customClass="UpdatePasswordViewController" customModule="Restroom_Review" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ejO-4F-2et">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-4f-26P">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glq-QD-VIR">
+                                <rect key="frame" x="100" y="131" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXD-II-FF2">
+                                <rect key="frame" x="0.0" y="81" width="414" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOH-l5-W0f">
+                                <rect key="frame" x="100" y="240" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1J-WX-xvV">
+                                <rect key="frame" x="0.0" y="190" width="414" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DVu-j7-DRZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="glq-QD-VIR" firstAttribute="leading" secondItem="DVu-j7-DRZ" secondAttribute="leading" constant="100" id="0bQ-fG-0DG"/>
+                            <constraint firstItem="glq-QD-VIR" firstAttribute="top" secondItem="xXD-II-FF2" secondAttribute="bottom" constant="20" id="Kay-hX-N49"/>
+                            <constraint firstItem="eOH-l5-W0f" firstAttribute="leading" secondItem="DVu-j7-DRZ" secondAttribute="leading" constant="100" id="KiW-Ia-OZ1"/>
+                            <constraint firstItem="DVu-j7-DRZ" firstAttribute="trailing" secondItem="glq-QD-VIR" secondAttribute="trailing" constant="100" id="TfF-QP-meV"/>
+                            <constraint firstItem="R1J-WX-xvV" firstAttribute="trailing" secondItem="DVu-j7-DRZ" secondAttribute="trailing" id="W6b-Zn-yog"/>
+                            <constraint firstItem="DVu-j7-DRZ" firstAttribute="trailing" secondItem="eOH-l5-W0f" secondAttribute="trailing" constant="100" id="bbx-RO-OrB"/>
+                            <constraint firstItem="R1J-WX-xvV" firstAttribute="top" secondItem="glq-QD-VIR" secondAttribute="bottom" constant="25" id="gzb-pw-YsO"/>
+                            <constraint firstItem="R1J-WX-xvV" firstAttribute="leading" secondItem="DVu-j7-DRZ" secondAttribute="leading" id="j9T-Ba-y4Y"/>
+                            <constraint firstItem="DVu-j7-DRZ" firstAttribute="trailing" secondItem="xXD-II-FF2" secondAttribute="trailing" id="jrY-Hg-l53"/>
+                            <constraint firstItem="eOH-l5-W0f" firstAttribute="top" secondItem="R1J-WX-xvV" secondAttribute="bottom" constant="20" id="n0L-hk-24L"/>
+                            <constraint firstItem="xXD-II-FF2" firstAttribute="top" secondItem="DVu-j7-DRZ" secondAttribute="top" constant="25" id="qmg-Jt-yZj"/>
+                            <constraint firstItem="xXD-II-FF2" firstAttribute="leading" secondItem="DVu-j7-DRZ" secondAttribute="leading" id="zj7-Ky-fIn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update Password" id="KgU-B5-dhr">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0h9-6g-2t5">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="tJN-J2-zId">
+                                <rect key="frame" x="302" y="11" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <connections>
+                                    <action selector="updatePassword:" destination="IER-La-cbK" eventType="touchUpInside" id="PgG-rq-AYS"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmPassword" destination="eOH-l5-W0f" id="QM9-b2-ZF0"/>
+                        <outlet property="newPassword" destination="glq-QD-VIR" id="hsy-kt-VqP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfq-f3-1U4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2956.521739130435" y="10.714285714285714"/>
         </scene>
     </scenes>
     <designables>
@@ -1107,7 +1199,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="4MF-0z-1eW"/>
-        <segue reference="nSJ-WA-wl9"/>
+        <segue reference="A62-B1-t0H"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="location" catalog="system" width="128" height="118"/>

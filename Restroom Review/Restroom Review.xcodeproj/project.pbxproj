@@ -19,6 +19,7 @@
 		CD43FEED27EC1DCD00A38888 /* ReviewDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */; };
 		CD43FEEF27EC37E200A38888 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEEE27EC37E200A38888 /* ReviewModel.swift */; };
 		CD43FEF327F0247400A38888 /* SelectAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43FEF227F0247400A38888 /* SelectAddressViewController.swift */; };
+		CD48DB172818F1120073C4C8 /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48DB162818F1120073C4C8 /* UpdatePasswordViewController.swift */; };
 		CD4FD36427F24CBD008EA81C /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4FD36327F24CBD008EA81C /* AddReviewViewController.swift */; };
 		CD7D604E2812451500FD7992 /* UpdateNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D604D2812451500FD7992 /* UpdateNameViewController.swift */; };
 		CD7D60502812469800FD7992 /* MainMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D604F2812469800FD7992 /* MainMoreViewController.swift */; };
@@ -48,6 +49,7 @@
 		CD43FEEC27EC1DCD00A38888 /* ReviewDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDoc.swift; sourceTree = "<group>"; };
 		CD43FEEE27EC37E200A38888 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		CD43FEF227F0247400A38888 /* SelectAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressViewController.swift; sourceTree = "<group>"; };
+		CD48DB162818F1120073C4C8 /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
 		CD4FD36327F24CBD008EA81C /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		CD7D604D2812451500FD7992 /* UpdateNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameViewController.swift; sourceTree = "<group>"; };
 		CD7D604F2812469800FD7992 /* MainMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMoreViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				CD7D604F2812469800FD7992 /* MainMoreViewController.swift */,
 				CD7D604D2812451500FD7992 /* UpdateNameViewController.swift */,
+				CD48DB162818F1120073C4C8 /* UpdatePasswordViewController.swift */,
 			);
 			path = MoreTab;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			files = (
 				CD0A381527E85BD700937BF6 /* RestroomModel.swift in Sources */,
 				CD0A381727E8F78100937BF6 /* MainSearchViewController.swift in Sources */,
+				CD48DB172818F1120073C4C8 /* UpdatePasswordViewController.swift in Sources */,
 				CD43FEED27EC1DCD00A38888 /* ReviewDoc.swift in Sources */,
 				CD227EA127FA307700C2E8DD /* TableRestroomViewController.swift in Sources */,
 				CD1F2D1C27F68346002FD9CD /* MapTableRestroomViewController.swift in Sources */,

@@ -6,6 +6,7 @@
 import UIKit
 import FirebaseAuthUI
 import FirebaseEmailAuthUI
+import FirebaseFirestore
 import Cosmos
 
 class UsersReviewTableCell: UITableViewCell {
@@ -51,6 +52,13 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
                     }
                 }
                 await MainActor.run {
+                    if reviews.isEmpty {
+                        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+                        label.center = view.center
+                        label.textAlignment = .center
+                        label.text = "No User Reviews Found"
+                        self.view.addSubview(label)
+                    }
                     reviewTableView.reloadData()
                 }
             } catch {

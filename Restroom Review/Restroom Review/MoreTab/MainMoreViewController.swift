@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import FirebaseAuthUI
 
 class OptionCell: UITableViewCell {
     
@@ -11,7 +12,7 @@ class OptionCell: UITableViewCell {
 
 class MainMoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let moreOptions: [String] = ["Update Name"]
+    let moreOptions: [String] = ["Update Name", "Update Password"]
     @IBOutlet weak var moreTableView: UITableView!
     
     override func viewDidLoad() {
@@ -37,14 +38,21 @@ class MainMoreViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        
         let segueIdentifier: String
         switch indexPath.row {
             case 0:
                 segueIdentifier = "UpdateNameSegue"
+            case 1:
+                segueIdentifier = "UpdatePasswordSegue"
             default:
                 segueIdentifier = ""
         }
-        performSegue(withIdentifier: segueIdentifier, sender: moreOptions[indexPath.row])
+        
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: segueIdentifier, sender: moreOptions[indexPath.row])
+        } else {
+            tabBarController?.selectedIndex = 1
+        }
     }
 }
