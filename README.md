@@ -5,6 +5,7 @@ SFSU CSC660 Mobile Development Project
 [- What is Restroom Review?](#what-is-restroom-review)
 
 [- How does it work?](#how-does-it-work)
+
 [  - Logging in](#logging-in)
 
 [  - Restrooms](#restrooms)
