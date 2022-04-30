@@ -2,10 +2,12 @@
 SFSU CSC660 Mobile Development Project
 
 ## Table of Contents
-[- What is Restroom Review? ](#what-is-restroom-review)
-[- How does it work? ](#how-does-it-work)
-[  - Logging in ](#logging-in)
-[  - Restrooms ](#restrooms)
+[- What is Restroom Review?](#what-is-restroom-review)
+
+[- How does it work?](#how-does-it-work)
+[  - Logging in](#logging-in)
+
+[  - Restrooms](#restrooms)
 
 
 ## What is Restroom Review?
