@@ -14,7 +14,7 @@ Built using Swift and Firebase
 
 
 ## How does it work?
-<b align="center">
-    Logging in
-</b>
+<p align="center">
+    <b>Logging in</b>
+</p>
 Users are able to login via email. Once logged in, users are able to see their profile under the account tab which shows the user's reviews.
