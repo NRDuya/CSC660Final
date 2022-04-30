@@ -2,8 +2,8 @@
 SFSU CSC660 Mobile Development Project
 
 ## Table of Contents
-[What is Restroom Review?](#what-is-restroom-review)
-[How does it work?](https://github.com/NRDuya/CSC660Final#how-does-it-work)
+[- What is Restroom Review?](#what-is-restroom-review)
+[- How does it work?](#how-does-it-work)
 
 ## What is Restroom Review?
 Restroom Review is an iOS app designed to help people find and review restrooms.
