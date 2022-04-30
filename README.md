@@ -2,11 +2,10 @@
 SFSU CSC660 Mobile Development Project
 
 ## Table of Contents
-[What is Restroom Review?](#what-is-restroom-review)
-[How does it work?](#how-does-it-work)
-[- Logging in](#logging-in)
-[- Restrooms](#restrooms)
-
+- [What is Restroom Review?](#what-is-restroom-review)
+- [How does it work?](#how-does-it-work)
+  - [Logging in](#logging-in)
+  - [Restrooms](#restrooms)
 
 ## What is Restroom Review?
 Restroom Review is an iOS app designed to help people find and review restrooms.
@@ -15,11 +14,6 @@ Restroom Review is an iOS app designed to help people find and review restrooms.
     Users can create new restrooms if it doesn't exist already
     Users can create a review on a restroom for others to see
     Users can find restrooms around them or at a specific location
-    
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
 
 ## How does it work?
 <h3 align="center">Logging in</h3>
