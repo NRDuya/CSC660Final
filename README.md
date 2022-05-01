@@ -30,6 +30,7 @@ Users are able to login via email. Once logged in, users are able to see their p
 Users do not need an account to create a restroom. Users only need to have the restroom address, name, and an optional phone number.
 
 <h3 align="center">Finding Restrooms</h3>
+Inline `code` has `back-ticks around` it.
 Users can simply click the `View Restrooms` button in the search tab to view restrooms near the users' location. This brings up the main screen users use to find restrooms. This screen shows a map of the nearby restrooms at the location with a button to show the list of the restrooms modally. Users are also able to move around the map to search new areas for restrooms.
 
 Within this screen, users can also utilize the search bar here to view restrooms at a specific address. This same search bar also exists in the main search bar tab or home screen with the same functionality to view restrooms at a specific address.
