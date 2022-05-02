@@ -99,6 +99,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         // Add user to firebase database
         userModel.logUser(uid: user.uid, displayName: displayName)
         self.showUserInfo(user: user)
+        return
     }
 }
 
