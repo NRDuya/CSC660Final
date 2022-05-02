@@ -36,7 +36,7 @@ Users can simply click the `View Restrooms` button in the search tab to view res
   <img src="demo/navigatingmap.gif" height="550px" />
 </p>
 
-Within this screen, users can also utilize the search bar here to view restrooms at a specific address. This same search bar also exists in the main search bar tab or home screen with the same functionality to view restrooms at a specific address.
+Within this screen, users can also utilize the search bar here to view restrooms at a specific address. This same search bar also exists in the main search bar tab or home screen with the same functionality to view restrooms at a specific address. Users can also press the navigation button on the top right to go back the their location if their location is not visible.
 <p align="center">
   <img src="demo/searchrestrooms.gif" height="550px" />
 </p>
