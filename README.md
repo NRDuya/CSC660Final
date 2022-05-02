@@ -31,7 +31,7 @@ Users are able to login via email. Once logged in, users are able to see their p
 </p>
 
 <h3 align="center">Finding Restrooms</h3>
-Users can simply click the `View Restrooms` button in the search tab to view restrooms near the users' location. This brings up the main screen users use to find restrooms. This screen shows a map of the nearby restrooms at the location with a button to show the list of the restrooms modally. Users are also able to move around the map to search new areas for restrooms.
+Users can simply click the ``View Restrooms`` button in the search tab to view restrooms near the users' location. This brings up the main screen users use to find restrooms. This screen shows a map of the nearby restrooms at the location with a button to show the list of the restrooms modally. Users are also able to move around the map to search new areas for restrooms.
 <p align="center">
   <img src="demo/navigatingmap.gif" height="600px" />
 </p>
@@ -54,7 +54,7 @@ Users do not need an account to create a restroom. Users only need to have the r
 </p>
 
 <h3 align="center">Creating Reviews</h3>
-Users can create reviews by simply clicking the `Add a review` button under the restroom they want to review. This brings up a modal which gives the user the ability to rate the restroom on a 5 toilet paper scale and write whatever comments they have on the restroom.
+Users can create reviews by simply clicking the ``Add a review`` button under the restroom they want to review. This brings up a modal which gives the user the ability to rate the restroom on a 5 toilet paper scale and write whatever comments they have on the restroom.
 <p align="center">
   <img src="demo/createreviews.gif" height="600px" />
 </p>
