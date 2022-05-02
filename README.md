@@ -19,11 +19,15 @@ Restroom Review is an iOS app designed to help people find and review restrooms.
     Users can create a review on a restroom for others to see
     Users can find restrooms around them or at a specific location
 
+<p align="center">
+  <img src="demo/appstart.gif" />
+</p>
+
 ## How does it work?
 <h3 align="center">Logging in</h3>
 Users are able to login via email. Once logged in, users are able to see their profile under the account tab which shows the user's reviews.
 <p align="center">
-  <img src="screenshots/" />
+  <img src="demo/login.gif" />
 </p>
 
 <h3 align="center">Creating Restrooms</h3>
