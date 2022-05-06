@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/nathanielduya/Desktop/CS CLASSES/Spring2022/iOS Dev csc680/CSC660Final/Restroom Review/Restroom Review/MainSearchViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:Restroom Review.xcodeproj">
    </FileRef>
    <FileRef
