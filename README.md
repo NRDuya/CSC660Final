@@ -9,6 +9,7 @@ SFSU CSC660 Mobile Development Project
   - [Finding Restrooms](#finding-restrooms)
   - [Creating Restrooms](#creating-restrooms)
   - [Creating Reviews](#creating-reviews)
+- [Building the Project](#building-the-project)
 
 
 ## What is Restroom Review?
@@ -59,5 +60,11 @@ Users can create reviews by simply clicking the `Add a review` button under the 
   <img src="demo/createreviews.gif" height="600px" />
 </p>
 
+<h3 align="center">Building the Project</h3>
+- In terminal, navigate into the folder containing the podfiles and workspace (/CSC600Final/Restroom\ Review)
+- Run pod install
+- In finder navigate into the folder containing the actual project files (/CSC600Final/Restroom\ Review/Restroom\ Review/)
+- Replace the `GoogleService-Info.plist` file with a firebase plist file
+- For best results build on iPhone 11
 
 <h3 align="center">Built using Swift and Firebase</h3>
