@@ -66,6 +66,7 @@ Users can create reviews by simply clicking the `Add a review` button under the 
 - In finder navigate into the folder containing the actual project files (/CSC600Final/Restroom\ Review/Restroom\ Review/)
 - Replace the `GoogleService-Info.plist` file with a firebase plist file
 - For best results build on iPhone 11
-<a/>
+[//]: # (Hello)
+
 
 <h3 align="center">Built using Swift and Firebase</h3>
